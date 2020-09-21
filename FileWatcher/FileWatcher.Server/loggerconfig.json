@@ -1,0 +1,32 @@
+{
+  "Serilog": {
+    "MinimumLevel": "Verbose",
+    "WriteTo": [
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "Console",
+              "Args": {
+                "theme": "Serilog.Sinks.SystemConsole.Themes.AnsiConsoleTheme::Code, Serilog.Sinks.Console",
+                "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:j}{NewLine}{Properties:j}{NewLine}{Exception}"
+              }
+            },
+            {
+              "Name": "RollingFile",
+              "Args": {
+                "pathFormat": "Logs\\fws-{Date}.log",
+                "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:j}{NewLine}{Properties:j}{NewLine}{Exception}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId", "WithExceptionDetails" ],
+    "Properties": {
+      "ApplicationName": "Jepun.Services.FileWatcher.Server"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\obj\Debug\netcoreapp3.1\RabbitmqTest.AssemblyInfoInputs.cache
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\obj\Debug\netcoreapp3.1\RabbitmqTest.AssemblyInfo.cs
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\bin\Debug\netcoreapp3.1\RabbitmqTest.deps.json
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\bin\Debug\netcoreapp3.1\RabbitmqTest.dll
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\bin\Debug\netcoreapp3.1\RabbitmqTest.pdb
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\obj\Debug\netcoreapp3.1\RabbitmqTest.dll
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\obj\Debug\netcoreapp3.1\RabbitmqTest.pdb
+C:\Users\AllenYu\source\repos\ConsoleApp1\RabbitmqTest\obj\Debug\netcoreapp3.1\RabbitmqTest.csprojAssemblyReference.cache

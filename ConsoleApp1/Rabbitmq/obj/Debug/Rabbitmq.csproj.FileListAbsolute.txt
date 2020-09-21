@@ -1,0 +1,9 @@
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\bin\Debug\Rabbitmq.dll
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\bin\Debug\Rabbitmq.pdb
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\bin\Debug\RabbitMQ.Client.dll
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\bin\Debug\RabbitMQ.Client.pdb
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\bin\Debug\RabbitMQ.Client.xml
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\obj\Debug\Rabbitmq.csproj.CopyComplete
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\obj\Debug\Rabbitmq.dll
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\obj\Debug\Rabbitmq.pdb
+C:\Users\AllenYu\source\repos\ConsoleApp1\Rabbitmq\obj\Debug\Rabbitmq.csprojAssemblyReference.cache

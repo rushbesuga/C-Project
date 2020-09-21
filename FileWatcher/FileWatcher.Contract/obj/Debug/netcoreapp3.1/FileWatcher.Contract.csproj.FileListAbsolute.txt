@@ -1,0 +1,7 @@
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\bin\Debug\netcoreapp3.1\FileWatcher.Contract.deps.json
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\bin\Debug\netcoreapp3.1\FileWatcher.Contract.dll
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\bin\Debug\netcoreapp3.1\FileWatcher.Contract.pdb
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\obj\Debug\netcoreapp3.1\FileWatcher.Contract.AssemblyInfoInputs.cache
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\obj\Debug\netcoreapp3.1\FileWatcher.Contract.AssemblyInfo.cs
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\obj\Debug\netcoreapp3.1\FileWatcher.Contract.dll
+C:\Users\AllenYu\source\repos\FileWatcher\FileWatcher.Contract\obj\Debug\netcoreapp3.1\FileWatcher.Contract.pdb
