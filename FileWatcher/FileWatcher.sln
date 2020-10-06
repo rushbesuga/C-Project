@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileWatcher.Contract", "FileWatcher.Contract\FileWatcher.Contract.csproj", "{17C6079B-9E25-4A9B-8266-725293444D69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWatcher.Plugin", "FileWatcher.Plugin\FileWatcher.Plugin.csproj", "{CB0F8FB6-2171-432C-B90C-48B2FE5A20F9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{17C6079B-9E25-4A9B-8266-725293444D69} = {17C6079B-9E25-4A9B-8266-725293444D69}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileWatcher.Server", "FileWatcher.Server\FileWatcher.Server.csproj", "{14E15128-393D-4F75-BCAE-732A306494BF}"
 EndProject
