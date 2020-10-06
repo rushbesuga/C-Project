@@ -41,7 +41,7 @@ namespace Services.Server
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }
-            ).AddJwtBearer(x=>
+            ).AddJwtBearer(x =>
             {
                 x.RequireHttpsMetadata = false;
                 x.SaveToken = true;
@@ -56,18 +56,17 @@ namespace Services.Server
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env , ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             var workDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var logfile = Path.Combine(workDir,"Logs", "{Date}-mw-trace.txt");
+            var logfile = Path.Combine(workDir, "Logs", "{Date}-mw-trace.txt");
             loggerFactory.AddFile(logfile);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             app.UseMiddleware<RequestResPonseLoggingMiddleware>();
-           app.UseHttpsRedirection();
-
+            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
