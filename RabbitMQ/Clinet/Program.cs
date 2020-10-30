@@ -13,7 +13,7 @@ namespace Clinet
 
                 var options = new FactoryOptions()
             {
-                HostName = "JEPUN-PC076",
+                HostName = "Allen-PC076",
                 HostPort = 5672,
                 UserName = "Allen",
                 UserPassword = "123",
@@ -27,6 +27,6 @@ namespace Clinet
 
             Console.ReadLine();
         }
-        }
+        
     }
 }

@@ -7,7 +7,9 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 namespace Rabbitmq
 {
-
+    /// <summary>
+    /// 發佈者類別
+    /// </summary>
     public class Publisher
     {
         private ConnectionFactory _factory { get; set; }
@@ -17,10 +19,19 @@ namespace Rabbitmq
         {
             get { return publisher.Value; }
         }
+        /// <summary>
+        /// 主路由
+        /// </summary>
         public string Exchange { get; set; }
+        /// <summary>
+        /// 子路由
+        /// </summary>
         public string Route { get; set; }
 
         private FactoryOptions _options;
+        /// <summary>
+        /// 連線設定
+        /// </summary>
         public FactoryOptions Options
         {
             get
