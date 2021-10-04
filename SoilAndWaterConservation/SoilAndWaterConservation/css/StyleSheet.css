@@ -2,6 +2,9 @@
     font-family: 微軟正黑體;
     font-weight: bold;
 }
+.div-border {
+    border: 1px black solid;
+}
 .IndexImage {
     overflow: hidden;
     border-radius: 20px;
@@ -20,6 +23,9 @@
 }
 .div-left {
     text-align: left;
+}
+.div-right {
+    text-align: right;
 }
 
 .div-cal-title {
