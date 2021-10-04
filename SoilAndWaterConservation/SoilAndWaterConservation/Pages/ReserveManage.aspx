@@ -4,10 +4,10 @@
     <script type="text/javascript" src="../Scripts/ReserveManage.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#ReserveDetail').hide();
+            $('#ReserveCalendar').show();
             getTownOption('dl_town');
             genCalendarDate(nowdate);
-            $('#ReserveCalendar').show();
-            $('#ReserveDetail').hide();
         })
 
     </script>
@@ -19,6 +19,7 @@
             <div class="col-md-12 div-center" style="font-size: 26px">
                 <span>所在公所：</span><select id="dl_town" style="width: 100%" onchange="genCalendarDate('now')">
                 </select>
+                <input type="button" value="匯出當周全區預約資料" onclick ="ExportReort();" />
             </div>
             <div class="col-md-4 div-center">
                 <span style="cursor: pointer; font-size: 26px" onclick="genCalendarDate('pre')"><i class="fas fa-arrow-circle-left"></i>上一周</span>
@@ -219,7 +220,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 div-center" style="margin-bottom: 10px;">
+        <div class="col-md-12 div-center" style="margin-bottom: 10px;font-size: 26px">
             <input type="button" value="儲存" onclick="SaveReserve()" />
             <input type="button" id="btn_del_reserve" value="刪除預約" onclick="DelReserve()" />
             <input type="button" value="取消" onclick="CloseReserveDetail()" />

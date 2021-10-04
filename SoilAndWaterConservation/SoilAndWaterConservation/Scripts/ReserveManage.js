@@ -339,6 +339,11 @@ function DelReserve() {
     }
 }
 
+function ExportReort() {
+    var url = '../Service/ReserveManageHandler.ashx?Type=ExportReport&WeekStartDate=' + $('#Dayoftheweek1Date').text().replaceAll('/', '-') + '&WeekEndDate=' + $('#Dayoftheweek5Date').text().replaceAll('/', '-');
+    window.open(url, "_blank");
+}
+
 function CloseReserveDetail() {
     resetReserveForm();
     $('#ReserveCalendar').show();

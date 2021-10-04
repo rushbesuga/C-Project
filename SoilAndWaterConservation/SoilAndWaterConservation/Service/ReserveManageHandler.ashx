@@ -5,6 +5,8 @@ using System.Web;
 using System.Data;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using ClosedXML.Excel;
+using System.IO;
 
 public class ReserveManageHandler : IHttpHandler, System.Web.SessionState.IReadOnlySessionState
 {
@@ -28,6 +30,8 @@ public class ReserveManageHandler : IHttpHandler, System.Web.SessionState.IReadO
         string sReserveContent = (context.Request.Form["ReserveContent"] != null) ? context.Request.Form["ReserveContent"] : context.Request["ReserveContent"];
         string sReserveEngineer = (context.Request.Form["ReserveEngineer"] != null) ? context.Request.Form["ReserveEngineer"] : context.Request["ReserveEngineer"];
         string sReserveEngineerResponse = (context.Request.Form["ReserveEngineerResponse"] != null) ? context.Request.Form["ReserveEngineerResponse"] : context.Request["ReserveEngineerResponse"];
+        string sWeekStartDate = (context.Request.Form["WeekStartDate"] != null) ? context.Request.Form["WeekStartDate"] : context.Request["WeekStartDate"];
+        string sWeekEndDate = (context.Request.Form["WeekEndDate"] != null) ? context.Request.Form["WeekEndDate"] : context.Request["WeekEndDate"];
 
         string sSql = "";
         string sBlock_id = "";
@@ -151,7 +155,42 @@ public class ReserveManageHandler : IHttpHandler, System.Web.SessionState.IReadO
                 JSONresult = JsonConvert.SerializeObject(sSqlResult);
                 context.Response.Write(JSONresult);
                 break;
+            case "ExportReport":
+                sSql = @"select block_id from tbl_block";
+                dt = sf.QueryData(sSql, null);
+                XLWorkbook wb = new XLWorkbook();
+                for (int iBlockCount = 1; iBlockCount <= dt.Rows.Count; iBlockCount++)
+                {
+                    sSql = @"select a.reserve_date as 預約日期,a.reserve_time as 預約時段,a.reserve_person_name as 預約人,a.reserve_phone as 電話,b.town_name as 地點,replace(replace(replace(a.reserve_item_type,'|',' '),'  ',''),' ',',') as 諮詢事項類別,a.reserve_content as 說明,reserve_engineer as 諮詢技師,reserve_engineer_response as 諮詢結果紀錄
+                            from tbl_reserve_data a
+                            LEFT JOIN tbl_town b on a.reserve_town_id = b.town_id
+                            where b.block_id = @iBlockCount and a.reserve_date>=@sWeekStartDate and a.reserve_date<=@sWeekEndDate
+                            ORDER BY a.reserve_date,a.reserve_time,a.reserve_town_id";
+                    Dparameter = new Dictionary<string, string>();
+                    Dparameter.Add("@iBlockCount", Convert.ToString(iBlockCount));
+                    Dparameter.Add("@sWeekStartDate", sWeekStartDate);
+                    Dparameter.Add("@sWeekEndDate", sWeekEndDate);
+                    DataTable dt2 = sf.QueryData(sSql,Dparameter);
+                    IXLWorksheet workSheet = wb.Worksheets.Add(dt2,"第"+iBlockCount+"區");
+                    workSheet.Columns().AdjustToContents();
+                }
+                MemoryStream stream = GetStream(wb);
+                string sFileName = sWeekStartDate + "-" + sWeekEndDate + "-預約明細表.xlsx";
+                context.Response.Clear();
+                context.Response.Buffer = true;
+                context.Response.AddHeader("content-disposition", "attachment; filename=" + sFileName);
+                context.Response.ContentType = "application/vnd.ms-excel";
+                context.Response.BinaryWrite(stream.ToArray());
+                context.Response.End();
+                break;
         }
+    }
+    public MemoryStream GetStream(XLWorkbook excelWorkbook)
+    {
+        MemoryStream fs = new MemoryStream();
+        excelWorkbook.SaveAs(fs);
+        fs.Position = 0;
+        return fs;
     }
     public string calDecreaseDate(DateTime Dnow, int DecreaseDays)
     {
