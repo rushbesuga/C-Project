@@ -130,7 +130,7 @@ function genCalendarDate(nowdate_) {
                                     '</td >';
                             }
                             else {
-                                AfternoonHtml += '<td style="cursor:not-allowed;border-width: 3pt 1pt 1pt; border-style: solid; border-color: white; background: gray; text-align: center; vertical-align: middle; color: windowtext; font-size: 18pt; font-family: Arial; border-image: initial;" onclick="OpenReserveWindows(\'' + aDate[i] + '\',\'Afternoon\');">' +
+                                AfternoonHtml += '<td style="cursor:not-allowed;border-width: 3pt 1pt 1pt; border-style: solid; border-color: white; background: gray; text-align: center; vertical-align: middle; color: windowtext; font-size: 18pt; font-family: Arial; border-image: initial;">' +
                                     '<p style = "margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;" >' +
                                     '<span style="font-size: 18pt;">已超過時間無法預約</span>' +
                                     '</p >' +

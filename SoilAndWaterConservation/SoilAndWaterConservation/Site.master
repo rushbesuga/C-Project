@@ -57,17 +57,17 @@
                             <ul class="dropdown-menu" style="font-size:20px">
                                 <li><a runat="server" href="~/Pages/PaymentCalculate"><i class="fas fa-calculator" ></i>水土保持工程相關費用計算</a></li>
                                 <li><a runat="server" href="~/Pages/Reserve"><i class="far fa-comment-dots"></i>水土保持服務團諮詢預約</a></li>
-                                <li><a runat="server" href="~/Pages/QA"><i class="fas fa-question-circle"></i>水土保持常見問答</a></li>
+                                <li><a runat="server" href="~/Pages/QAandMessageBoard"><i class="fas fa-question-circle"></i>水土保持常見問答</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu" id="AdminSubmenu" runat="server">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book-reader"></i> <span class="nav-label">管理功能</span><span class="caret"></span></a>
                             <ul class="dropdown-menu" style="font-size:20px">
-                                <li><a runat="server" href="~/Pages/PlanSetting"><i class="fas fa-clipboard-list"></i>簡易水土保持計畫進度維護</a></li>
-                                <li><a runat="server" href="~/Pages/ReserveSetting"><i class="far fa-comment-dots"></i>水土保持服務團諮詢預約維護</a></li>
+                                <li><a runat="server" href="~/Pages/PlanManage"><i class="fas fa-clipboard-list"></i>簡易水土保持計畫進度維護</a></li>
+                                <li><a runat="server" href="~/Pages/ReserveManage"><i class="far fa-comment-dots"></i>水土保持服務團諮詢預約維護</a></li>
                                 <li><a runat="server" href="~/Pages/PlanUpload"><i class="fas fa-cloud-upload-alt"></i>簡易水土保持計畫上傳</a></li>
                                 <li><a runat="server" href="~/Pages/QRCODE"><i class="fas fa-qrcode"></i>產生案件 QRCODE</a></li>
-                                <li><a runat="server" href="~/Pages/QASetting"><i class="fas fa-cog"></i>水土保持常見問答維護</a></li>
+                                <li><a runat="server" href="~/Pages/QAMaintenance"><i class="fas fa-cog"></i>水土保持常見問答維護</a></li>
                                 <li><a runat="server" href="~/Pages/Plan"><i class="fas fa-download"></i>簡易水土保持計畫查詢與下載</a></li>
                             </ul>
                         </li>

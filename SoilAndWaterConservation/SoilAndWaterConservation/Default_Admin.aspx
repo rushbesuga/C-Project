@@ -18,7 +18,7 @@
             <a href="Pages/QRCODE"><image class="IndexImage" src="images/admin-default-down-left.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
-            <a href="Pages/QAManage"><image class="IndexImage" src="images/admin-default-down-center.png"></image></a>
+            <a href="Pages/QAMaintenance"><image class="IndexImage" src="images/admin-default-down-center.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
             <a href="Pages/PlanQUeryDownload"><image class="IndexImage" src="images/admin-default-down-right.png"></image></a>

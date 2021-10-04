@@ -28,7 +28,7 @@
     });
 }
 function addLink(cellvalue, options, rowObject) {
-    return "<a href='CheckQA.aspx?id=" + rowObject.row_id + "'>" + cellvalue+"</a>";
+    return "<a href='CheckQA.aspx?id=" + rowObject.row_id + "'>" + cellvalue + "</a>";
 }
 function searchdata() {
     $("#QAGrid").jqGrid('setGridParam', {
@@ -71,7 +71,28 @@ function loadmaintenancejqgrid() {
         loadonce: true
     });
     function showButton(cellvalue, options, rowObject) {
-        return "<button type='button'  onclick='gotopage(" + rowObject.row_id + ")'>選擇 </button>";
+        return "<button type='button'  onclick='gotopage(" + rowObject.row_id + ")'>選擇</button><button type='button'  onclick='delMessage(" + rowObject.row_id + ")'>刪除</button>";
+    }
+}
+
+function delMessage(row_id) {
+
+    if (confirm("確定要刪除嗎？")) {
+        $.ajax({
+            url: '../Service/QAandMessageBoardHandler.ashx?Type=delMessage&id=' + row_id,
+            type: 'GEt',
+            success: function () {
+                alert('刪除成功');
+                searchmaintenancedata();
+            },
+            error: function (thrownError) {
+
+                alert('儲存失敗');
+            }
+        });
+    }
+    else {
+        return false;
     }
 }
 
