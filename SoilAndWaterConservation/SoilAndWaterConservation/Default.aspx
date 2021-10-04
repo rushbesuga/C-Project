@@ -14,7 +14,7 @@
             <a href="Pages/Reserve"><image class="IndexImage" src="images/user-default-center.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
-            <a href="Pages/QAandMessageBoard"><image class="IndexImage" src="images/user-default-right.png"></image></a>
+            <a href="Pages/QA"><image class="IndexImage" src="images/user-default-right.png"></image></a>
         </div>
     </div>
 

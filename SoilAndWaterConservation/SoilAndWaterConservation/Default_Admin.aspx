@@ -4,10 +4,10 @@
 
     <div class="row">
         <div class="col-md-4 div-center">
-            <a href="Pages/PlanSetting"><image class="IndexImage" src="images/admin-default-left.png"></image></a>
+            <a href="Pages/PlanManage"><image class="IndexImage" src="images/admin-default-left.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
-            <a href="Pages/ReserveSetting"><image class="IndexImage" src="images/admin-default-center.png"></image></a>
+            <a href="Pages/ReserveManage"><image class="IndexImage" src="images/admin-default-center.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
             <a href="Pages/PlanUpload"><image class="IndexImage" src="images/admin-default-right.png"></image></a>
@@ -18,7 +18,7 @@
             <a href="Pages/QRCODE"><image class="IndexImage" src="images/admin-default-down-left.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
-            <a href="Pages/QASetting"><image class="IndexImage" src="images/admin-default-down-center.png"></image></a>
+            <a href="Pages/QAManage"><image class="IndexImage" src="images/admin-default-down-center.png"></image></a>
         </div>
         <div class="col-md-4 div-center">
             <a href="Pages/PlanQUeryDownload"><image class="IndexImage" src="images/admin-default-down-right.png"></image></a>
