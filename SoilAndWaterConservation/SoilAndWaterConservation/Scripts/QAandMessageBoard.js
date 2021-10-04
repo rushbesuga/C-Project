@@ -98,7 +98,7 @@ function delMessage(row_id) {
 
 function gotopage(row_id) {
 
-    location.href = 'RecoveryQA.aspx?id=' + row_id;
+    location.href = 'ReplyQA.aspx?id=' + row_id;
 }
 
 function clearfilter() {
@@ -160,7 +160,7 @@ function searchmaintenancedata() {
     }).trigger('reloadGrid');
 
 }
-function saverecoveryqa() {
+function saveReplyQA() {
     var data;
     data = new FormData();
     data.append('id', $('#tbid').val());

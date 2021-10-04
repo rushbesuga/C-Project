@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_RecoveryQA : System.Web.UI.Page
+public partial class Pages_ReplyQA : System.Web.UI.Page
 {
     protected void Page_PreRender(object sender, EventArgs e)
     {

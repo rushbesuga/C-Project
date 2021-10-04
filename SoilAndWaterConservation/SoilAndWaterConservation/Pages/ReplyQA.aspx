@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="RecoveryQA.aspx.cs" Inherits="Pages_RecoveryQA" %>
+﻿<%@ Page Title="水土保持常見問答回覆" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="ReplyQA.aspx.cs" Inherits="Pages_ReplyQA" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -148,7 +148,7 @@
 
                 <div class="col-md-12 div-center" style="margin-bottom: 10px; font-size: 20px">
                     <input type="button" id="btnsendemail" style="background-color: lightseagreen;" value="發送郵件" />
-                    <input type="button" id="btnsend" style="background-color: lightseagreen;" value="儲存" onclick="saverecoveryqa()" />
+                    <input type="button" id="btnsend" style="background-color: lightseagreen;" value="儲存" onclick="saveReplyQA()" />
                     <input type="button" id="btnclear" style="background-color: grey;" value="取消" onclick="location.href = 'QAmaintenance.aspx'" />
                 </div>
             </div>

@@ -28,14 +28,16 @@ public class QAandMessageBoardHandler : IHttpHandler
         switch (sType)
         {
             case "tbl_qaandmessage_data":
-                sSql = @"select * from tbl_qaandmessage_data order by row_id";
+                sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,CONVERT(VARCHAR(19), row_recovery_time , 120) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
+ from tbl_qaandmessage_data order by row_id";
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);
                 context.Response.Write(JSONresult);
                 break;
             case "tbl_qaandmessage_data_Filter":
-                sSql = @"select * from tbl_qaandmessage_data where row_content like '%" + sFilter + "%'  order by row_id";
+                sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,CONVERT(VARCHAR(19), row_recovery_time , 120) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
+ from tbl_qaandmessage_data where row_content like '%" + sFilter + "%'  order by row_id";
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);
@@ -45,7 +47,7 @@ public class QAandMessageBoardHandler : IHttpHandler
                 sSql = @"select row_id,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,row_title,row_name, case when ISNULL(row_recovery_public,'1') ='0' then '公開' else '不公開' end  as row_recovery_punlic
 , case when   ISNULL(row_recovery_procflag,'1') ='1' then '未處理' else '已處理' end as row_recovery_procflag
                 from tbl_qaandmessage_data order by row_id";
-                //,' <input type=""button"" style="" value=""編輯"" onclick=""location.href=''RecoveryQA.aspx?id='+cast(row_id as VARCHAR)+'""' as click
+                //,' <input type=""button"" style="" value=""編輯"" onclick=""location.href=''ReplyQA.aspx?id='+cast(row_id as VARCHAR)+'""' as click
 
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
@@ -81,7 +83,7 @@ public class QAandMessageBoardHandler : IHttpHandler
                 break;
             case "tbl_qaandmessage_maintenance_Details":
                 sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,
-                         row_createtime,row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,isnull(row_recovery_public,'1') as row_recovery_public,isnull(row_recovery_procflag,'0') as row_recovery_procflag
+                         ,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,isnull(row_recovery_public,'1') as row_recovery_public,isnull(row_recovery_procflag,'0') as row_recovery_procflag
                          from tbl_qaandmessage_data where row_id=" + sid;
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
