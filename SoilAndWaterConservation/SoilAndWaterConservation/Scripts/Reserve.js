@@ -153,7 +153,8 @@ function genCalendarDate(nowdate_) {
 
 function OpenReserveWindows(ReserveDate,ReserveTimeType) {
     $('#ReserveCalendar').hide();
-    $('#ReserveDetail').show(); 
+    $('#ReserveDetail').show();
+    resetReserveForm();
     $('#tbReserveDate').val(ReserveDate);
     $('#tbReserveTown').val($("#dl_town option:selected").text());
     $('#dlReserveTimeType').empty();
@@ -171,50 +172,98 @@ function OpenReserveWindows(ReserveDate,ReserveTimeType) {
 }
 
 function SaveReserve() {
-    var formData = new FormData();
-    formData.append('UserValidation', $('#MainContent_tbCheck').val());
-    formData.append('ReserveDate', $('#tbReserveDate').val());
-    formData.append('ReserveTimeType', $('#dlReserveTimeType').val());
-    formData.append('ReservePerson', $('#tbReservePerson').val());
-    formData.append('ReservePhone', $('#tbReservePhone').val());
-    formData.append('ReserveMail', $('#tbReserveMail').val());
-    formData.append('ReserveTown', $("#dl_town option:selected").val());
-    var chooseReserveItem = '';
-    for (var i = 0; i < $('.cbReserveItemType').length; i++) {
-        if ($('.cbReserveItemType')[i].checked == true) {
-            if (i != $('.cbReserveItemType').length - 1)
-                chooseReserveItem += $('.cbReserveItemType')[i].value + '|';
-            else
-                chooseReserveItem += $('.cbReserveItemType')[i].value;
-        }
-        else {
-            if (i != $('.cbReserveItemType').length - 1)
-                chooseReserveItem += ' |';
-            else
-                chooseReserveItem += ' ';
+    if (CheckInput())
+    {
+        var formData = new FormData();
+        formData.append('UserValidation', $('#MainContent_tbCheck').val());
+        formData.append('ReserveDate', $('#tbReserveDate').val());
+        formData.append('ReserveTimeType', $('#dlReserveTimeType').val());
+        formData.append('ReservePerson', $('#tbReservePerson').val());
+        formData.append('ReservePhone', $('#tbReservePhone').val());
+        formData.append('ReserveMail', $('#tbReserveMail').val());
+        formData.append('ReserveTown', $("#dl_town option:selected").val());
+        var chooseReserveItem = '';
+        for (var i = 0; i < $('.cbReserveItemType').length; i++) {
+            if ($('.cbReserveItemType')[i].checked == true) {
+                if (i != $('.cbReserveItemType').length - 1)
+                    chooseReserveItem += $('.cbReserveItemType')[i].value + '|';
+                else
+                    chooseReserveItem += $('.cbReserveItemType')[i].value;
+            }
+            else {
+                if (i != $('.cbReserveItemType').length - 1)
+                    chooseReserveItem += ' |';
+                else
+                    chooseReserveItem += ' ';
 
+            }
         }
+        formData.append('ReserveItemType', chooseReserveItem);
+        formData.append('ReserveContent', $('#tbReserveContent').val());
+
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: '../Service/ReserveHandler.ashx?Type=SaveReserve',
+            processData: false,
+            contentType: false,
+            dataType: "json",
+            data: formData,
+            success: function (data) {
+                alert(data)
+                CloseReserveDetail();
+            },
+            error: function (thrownError) {
+            }
+        });
     }
-    formData.append('ReserveItemType', chooseReserveItem);
-    formData.append('ReserveContent', $('#tbReserveContent').val());
+}
 
-    $.ajax({
-        type: "POST",
-        async: false,
-        url: '../Service/ReserveHandler.ashx?Type=SaveReserve',
-        processData: false,
-        contentType: false,
-        dataType: "json",
-        data: formData,
-        success: function (data) {
-            alert(data)
-        },
-        error: function (thrownError) {
-        }
-    });
+
+function resetReserveForm() {
+    $('#tbReserveDate').val('');
+    $('#dlReserveTimeType').val('');
+    $('#tbReservePerson').val('');
+    $('#tbReservePhone').val('');
+    $('#tbReserveMail').val('');
+    $('#tbReserveTown').val('');
+    for (var i = 0; i < $('.cbReserveItemType').length; i++) {
+        $('.cbReserveItemType')[i].checked = false;
+    }
+    $('#tbReserveContent').val('');
+    $('#tbCheck').val('');
 }
 
 function CloseReserveDetail() {
+    resetReserveForm();
     $('#ReserveCalendar').show();
     $('#ReserveDetail').hide();
+    genCalendarDate('now');
+}
+
+function CheckInput() {
+    if ($('#tbReservePerson').val().trim() == '') {
+        alert('請輸入預約人');
+        return false;
+    }
+    if ($('#tbReservePhone').val().trim() == '') {
+        alert('請輸入電話');
+        return false;
+    }
+    var bHaveSelect = false;
+    var chooseReserveItem = '';
+    for (var i = 0; i < $('.cbReserveItemType').length; i++) {
+        if ($('.cbReserveItemType')[i].checked == true) {
+            bHaveSelect = true;
+            break;
+        }
+        else {
+            bHaveSelect = false;
+        }
+    }
+    if (!bHaveSelect) {
+        alert('請選擇諮詢事項類別');
+        return false;
+    }
+    return true;
 }

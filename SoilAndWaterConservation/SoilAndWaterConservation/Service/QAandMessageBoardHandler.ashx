@@ -82,7 +82,7 @@ public class QAandMessageBoardHandler : IHttpHandler
                 context.Response.Write(JSONresult);
                 break;
             case "tbl_qaandmessage_maintenance_Details":
-                sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,
+                sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content
                          ,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,isnull(row_recovery_public,'1') as row_recovery_public,isnull(row_recovery_procflag,'0') as row_recovery_procflag
                          from tbl_qaandmessage_data where row_id=" + sid;
                 JSONresult = "";

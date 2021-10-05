@@ -1,12 +1,20 @@
 ﻿body {
-    font-size: 14px;
     font-family: 微軟正黑體;
     font-weight: bold;
+    font-size: 20px;
 }
 .IndexImage {
     overflow: hidden;
     border-radius: 20px;
     cursor: pointer;
+}
+.content-text {
+    font-size:20px;
+}
+.div-card {
+    background-color: #E9E6E6 ;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 .reserve-table {
     border-collapse: collapse;
@@ -67,4 +75,21 @@
 .led-light {
     width:20px;
     height:20px;
+}
+
+.ui-jqgrid,
+.ui-jqgrid .ui-jqgrid-view,
+.ui-jqgrid .ui-jqgrid-pager,
+.ui-jqgrid .ui-pg-input {
+    font-size: 20px;
+}
+
+.ui-jqgrid .ui-jqgrid-htable th div {
+    height: 35px;
+    overflow: hidden;
+    padding-right: 4px;
+    padding-top: 2px;
+    position: relative;
+    vertical-align: text-top;
+    white-space: normal !important;
 }

@@ -6,21 +6,22 @@
         $(document).ready(function () {
             getDevOption();
         })
-        
+
     </script>
-    <div class="jumbotron div-center" style="background-color:white;padding-bottom:0px;padding-top:0px">
+    <div class="jumbotron div-center" style="background-color: white; padding-bottom: 0px; padding-top: 0px">
         <a class="div-cal-main-title">水土保持金工程相關費用試算</a>
     </div>
-    <div class="row">
-        <div class="col-md-6 div-center">
-            <div class="col-md-12 div-cal-title"><i class="fas fa-award"></i>
+    <div class="row content-text">
+        <div class="col-md-12 div-center div-card">
+            <div class="col-md-12 div-cal-title">
+                <i class="fas fa-award"></i>
                 水土保持保證金<i class="fas fa-award"></i>
             </div>
             <div class="col-md-4 div-left">
                 水土保持計畫總工程造價
             </div>
             <div class="col-md-6 div-center">
-                <input type="text" id="dev_total_amount" style="width:100%"/>
+                <input type="text" id="dev_total_amount" style="min-width:100%;" />
             </div>
             <div class="col-md-2 div-left">
                 元
@@ -29,7 +30,7 @@
                 開發利用類別
             </div>
             <div class="col-md-6 div-center">
-                <select id="dl_dev_type" style="width:100%">
+                <select id="dl_dev_type" style="min-width:100%;">
                     <option>請選擇開發類別</option>
                 </select>
             </div>
@@ -39,12 +40,12 @@
 
             <div class="col-md-12 div-left">
                 試算金額：共需新台幣
-                <label id="dev_cal_price" style="color:red"></label>
+                <label id="dev_cal_price" style="color: red"></label>
                 元
             </div>
 
             <div class="col-md-12 div-left">
-                <table border="1" style="width:100%">
+                <table border="1" style="width: 100%">
                     <tr>
                         <td style="font-size: smaller">
                             <p>
@@ -62,17 +63,19 @@
                         </td>
                     </tr>
                 </table>
+                <br/>
             </div>
         </div>
-        <div class="col-md-6 div-center">
-            <div class="col-md-12  div-cal-title"><i class="fas fa-award"></i>
+        <div class="col-md-12 div-center div-card">
+            <div class="col-md-12  div-cal-title">
+                <i class="fas fa-award"></i>
                 計畫變更審查費<i class="fas fa-award"></i>
             </div>
             <div class="col-md-4 div-left">
                 原審查費
             </div>
             <div class="col-md-6 div-center">
-                <input type="text" id="txbAuditOriginalPrice" />
+                <input type="text" id="txbAuditOriginalPrice" style="min-width:100%;"/>
             </div>
             <div class="col-md-2 div-left">
                 元
@@ -81,7 +84,7 @@
                 原工程造價
             </div>
             <div class="col-md-6 div-center">
-                <input type="text" id="txbMakeOriginalPrice"/>
+                <input type="text" id="txbMakeOriginalPrice" style="min-width:100%;" />
             </div>
             <div class="col-md-2 div-left">
                 元
@@ -90,21 +93,21 @@
                 變更工程造價
             </div>
             <div class="col-md-6 div-center">
-                <input type="text" id="txbChangeMakePrice"/>
+                <input type="text" id="txbChangeMakePrice" style="min-width:100%;" />
             </div>
             <div class="col-md-2 div-left">
                 元
             </div>
             <div class="col-md-10 div-left">
                 試算金額：需新台幣
-                <label id="plan_change_cal_price" style="color:red"></label>
+                <label id="plan_change_cal_price" style="color: red"></label>
                 元
             </div>
             <div class="col-md-2 div-center">
-                <input type="button" value="開始計算" onclick="getPlanChangeCalPrice();"/>
+                <input type="button" value="開始計算" onclick="getPlanChangeCalPrice();" />
             </div>
             <div class="col-md-12 div-left">
-                <table border="1" style="width:100%">
+                <table border="1" style="width: 100%">
                     <tr>
                         <td style="font-size: smaller">
                             <p>
@@ -113,21 +116,20 @@
                         </td>
                     </tr>
                 </table>
+                <br/>
             </div>
 
         </div>
-    </div>
-    <div class="row"><br /></div>
-    <div class="row">
-        <div class="col-md-6 div-center">
-            <div class="col-md-12  div-cal-title"><i class="fas fa-award"></i>
+        <div class="col-md-12 div-center div-card">
+            <div class="col-md-12  div-cal-title">
+                <i class="fas fa-award"></i>
                 水土保持計畫書審查費<i class="fas fa-award"></i>
             </div>
             <div class="col-md-4 div-left">
                 面積(公頃)
             </div>
             <div class="col-md-6 div-center">
-                <input type="text" id="txbPlanArea"/>
+                <input type="text" id="txbPlanArea" style="min-width:100%;"/>
             </div>
             <div class="col-md-2 div-center">
                 <input type="button" value="開始計算" onclick="getPlanAuditCalPrice();" />
@@ -135,36 +137,36 @@
 
             <div class="col-md-12 div-left">
                 試算金額：需新台幣
-                <label id="plan_audit_cal_price" style="color:red"></label>
+                <label id="plan_audit_cal_price" style="color: red;"></label>
                 元
             </div>
         </div>
 
 
-        <div class="col-md-6 div-center">
-            <div class="col-md-12  div-cal-title"><i class="fas fa-award"></i>
+        <div class="col-md-12 div-center div-card">
+            <div class="col-md-12  div-cal-title">
+                <i class="fas fa-award"></i>
                 水土保持規劃書審查費<i class="fas fa-award"></i>
             </div>
             <div class="col-md-4 div-left">
                 面積(公頃)
             </div>
             <div class="col-md-6 div-center">
-                <input type="text"  id="txbPlanningArea"/>
+                <input type="text" id="txbPlanningArea" style="min-width:100%;" />
             </div>
             <div class="col-md-2 div-center">
-                <input type="button" value="開始計算" onclick="getPlanningAuditCalPrice();"/>
+                <input type="button" value="開始計算" onclick="getPlanningAuditCalPrice();" />
             </div>
 
             <div class="col-md-12 div-left">
                 試算金額：需新台幣
-                <label id="planning_audit_cal_price" style="color:red"></label>
+                <label id="planning_audit_cal_price" style="color: red"></label>
                 元
             </div>
         </div>
-    </div>
 
-    <div class="row">
-    </div>
+        <div class="row">
+        </div>
 </asp:Content>
 
 

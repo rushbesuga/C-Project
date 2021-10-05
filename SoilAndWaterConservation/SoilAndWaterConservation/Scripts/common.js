@@ -21,3 +21,7 @@ function getTownOption(elememt_id) {
         }
     });
 }
+function reloadcode() {
+    document.getElementById("imgValidate").src = "../Service/Validation.ashx?t=" + (new Date()).valueOf();
+    return false;
+}

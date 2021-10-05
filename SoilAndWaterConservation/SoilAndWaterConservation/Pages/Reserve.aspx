@@ -6,6 +6,8 @@
         $(document).ready(function () {
             getTownOption('dl_town');
             genCalendarDate(nowdate);
+            
+            $('#tbReserveContent').val('');
             $('#ReserveCalendar').show();
             $('#ReserveDetail').hide();
         })
@@ -100,7 +102,7 @@
                         預約日期:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" id="tbReserveDate" readonly="readonly" style="background-color: gray;min-width: 100%;"  />
+                        <input type="text" id="tbReserveDate" readonly="readonly" style="background-color: lightgray;min-width: 100%;"  />
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -151,7 +153,7 @@
                         地點:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" readonly="readonly" id="tbReserveTown" style="background-color: gray;min-width: 100%;"  />
+                        <input type="text" readonly="readonly" id="tbReserveTown" style="background-color: lightgray;min-width: 100%;"  />
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">

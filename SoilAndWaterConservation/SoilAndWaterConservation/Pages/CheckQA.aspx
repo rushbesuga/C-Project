@@ -25,7 +25,7 @@
                     編號:
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbid" style="background-color: grey;" />
+                    <input type="text" readonly="readonly" id="tbid" style="background-color: lightgray;" />
                 </div>
 
             </div>
@@ -37,7 +37,7 @@
                     姓名(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbname" style="background-color: grey;min-width: 70%;" />
+                    <input type="text" readonly="readonly" id="tbname" style="background-color: lightgray;min-width: 70%;" />
                     <input type="radio" id="rbmale" name="sex" onclick="return false" />
                     <label>先生</label>
                     <input type="radio" id="rbfeamle" name="sex" onclick="return false" />
@@ -52,7 +52,7 @@
                     聯絡人電話(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbphone" style="background-color: grey;min-width: 100%;" />
+                    <input type="text" readonly="readonly" id="tbphone" style="background-color: lightgray;min-width: 100%;" />
                 </div>
             </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -62,7 +62,7 @@
                     電子信箱(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbemail" style="background-color: grey;min-width: 100%;" />
+                    <input type="text" readonly="readonly" id="tbemail" style="background-color: lightgray;min-width: 100%;" />
                 </div>
             </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -72,7 +72,7 @@
                     信件主旨(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbemailtitle" style="background-color: grey;min-width: 100%;" />
+                    <input type="text" readonly="readonly" id="tbemailtitle" style="background-color: lightgray;min-width: 100%;" />
                 </div>
             </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -82,7 +82,7 @@
                     問題內容(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbcontent" style="min-height: 150px; min-width: 100%; background-color: grey;" />
+                    <input type="text" readonly="readonly" id="tbcontent" style="min-height: 150px; min-width: 100%; background-color: lightgray;" />
                 </div>
             </div>
             </div >

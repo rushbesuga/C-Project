@@ -19,7 +19,7 @@
             <a class="div-cal-main-title">常見問答</a>
         </div>
         <div class="col-md-12 div-right" style="margin-bottom: 10px;">
-            <label>內容:</label>
+            <label>關鍵字:</label>
             <input type="text" id="filter">
             <input type="button" class="" style="" value="送出查詢" onclick="searchdata()" />
             <input type="button" class="" style="" value="清除內容" onclick="clearfilter()" />
