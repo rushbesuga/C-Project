@@ -14,7 +14,7 @@
 
     </script>
     <div id="ReserveCalendar">
-        <div class="jumbotron div-center div-cal-title" style="background-color: white; padding-bottom: 0px; padding-top: 0px">
+        <div class="jumbotron div-center div-cal-main-title" style="background-color: white; padding-bottom: 0px; padding-top: 0px">
             水土保持服務團諮詢預約
         </div>
         <div class="container-fluid">
@@ -90,7 +90,7 @@
     </div>
 
     <div id="ReserveDetail">
-        <div class="jumbotron div-center div-cal-title" style="background-color: white; padding-bottom: 0px; padding-top: 0px">
+        <div class="jumbotron div-center div-cal-main-title" style="background-color: white; padding-bottom: 0px; padding-top: 0px">
             水土保持服務團諮詢預約
         </div>
         <div class="container-fluid">
