@@ -19,10 +19,10 @@
                     姓名(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <asp:TextBox id="tbname" runat="server" />
-                    <asp:RadioButton id="rbmale" runat="server" GroupName="sex" />
+                    <asp:TextBox id="tbname" runat="server" style="min-width: 70%"/>
+                    <asp:RadioButton id="rbmale" runat="server" GroupName="sex"  style="min-width: 15%"/>
                     <label>先生</label>
-                    <asp:RadioButton id="rbfeamle" runat="server" GroupName="sex" />
+                    <asp:RadioButton id="rbfeamle" runat="server" GroupName="sex"  style="min-width: 15%"/>
                     <label>小姐</label>
                 </div>
 
@@ -34,7 +34,7 @@
                     聯絡人電話(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <asp:TextBox ID="tbphone" runat="server"/>
+                    <asp:TextBox ID="tbphone" runat="server" style="min-width: 100%"/>
                 </div>
             </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -44,17 +44,17 @@
                     電子信箱(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <asp:TextBox ID="tbemail" runat="server"/>
+                    <asp:TextBox ID="tbemail" runat="server" style="min-width: 100%"/>
                 </div>
             </div>
               <div class="col-md-12 div-center" style="margin-bottom: 10px;">
                     <div class="col-md-1" style="font-size: 20px; text-align: right">
                 </div>
-            <div class="col-md-4" style="font-size: 20px; text-align: center">
+            <div class="col-md-4" style="font-size: 20px; text-align: center;">
                 信件主旨(*必填):
             </div>
             <div class="col-md-7" style="font-size: 20px; text-align: left">
-                <asp:TextBox ID="tbemailtitle" runat="server" />
+                <asp:TextBox ID="tbemailtitle" runat="server" style="min-width: 100%"/>
             </div>
                   </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -64,7 +64,7 @@
                     問題內容(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <asp:TextBox ID="tbcontent" runat="server" style="min-height: 150px; min-width: 200px"/>
+                    <asp:TextBox ID="tbcontent" runat="server" style="min-height: 150px; min-width: 100%"/>
                 </div>
             </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">

@@ -96,11 +96,11 @@
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
                     <div class="col-md-1" style="font-size: 20px; text-align: right">
                     </div>
-                    <div class="col-md-4" style="font-size: 20px; text-align: center">
+                    <div class="col-md-4" style="font-size: 20px; text-align: center;">
                         預約日期:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" id="tbReserveDate" readonly="readonly" style="background-color: gray" id="tbReserveDate" />
+                        <input type="text" id="tbReserveDate" readonly="readonly" style="background-color: gray;min-width: 100%;"  />
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -110,7 +110,7 @@
                         預約時段:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <select id="dlReserveTimeType" style="width: 100%">
+                        <select id="dlReserveTimeType" style="min-width: 100%;">
                         </select>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         *預約人:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" id="tbReservePerson" />
+                        <input type="text" id="tbReservePerson" style="min-width: 100%;"/>
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -131,7 +131,7 @@
                         *連絡電話:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" id="tbReservePhone" />
+                        <input type="text" id="tbReservePhone" style="min-width: 100%;"/>
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -141,7 +141,7 @@
                         電子郵件:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" id="tbReserveMail" />
+                        <input type="text" id="tbReserveMail" style="min-width: 100%;" />
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -151,7 +151,7 @@
                         地點:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" readonly="readonly" id="tbReserveTown" style="background-color: gray" id="tbTown" />
+                        <input type="text" readonly="readonly" id="tbReserveTown" style="background-color: gray;min-width: 100%;"  />
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
@@ -181,7 +181,7 @@
                             說明:
                         </div>
                         <div class="col-md-7" style="font-size: 20px; text-align: left">
-                            <textarea id="tbReserveContent" rows="8" cols="300">
+                            <textarea id="tbReserveContent" rows="8" cols="300" style="min-width: 100%;">
 
                     </textarea>
                         </div>
