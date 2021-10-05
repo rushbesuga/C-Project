@@ -8,10 +8,8 @@
         },
         mtype: 'GET',
         colModel: [
-            { name: 'row_id', label: '編號', },
-            {
-                name: 'row_title', label: '標題', formatter: 'showlink', formatter: addLink
-            },
+            { name: 'row_id', label: '編號' },
+            { name: 'row_title', label: '標題' },
             { name: 'row_createtime', label: '發布日期' },
         ],
         pager: '#pager',
@@ -24,11 +22,13 @@
         sortname: 'Name',
         sortorder: "asc",
         viewrecords: true,
-        loadonce: true
+        loadonce: true,
+        onSelectRow: function (ids) {
+            if (ids != null) {
+                location.href = 'CheckQA.aspx?id=' + $("#QAGrid").jqGrid('getCell', ids, 'row_id') ;
+            }
+        }
     });
-}
-function addLink(cellvalue, options, rowObject) {
-    return "<a href='CheckQA.aspx?id=" + rowObject.row_id + "'>" + cellvalue + "</a>";
 }
 function searchdata() {
     $("#QAGrid").jqGrid('setGridParam', {
