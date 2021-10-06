@@ -21,12 +21,12 @@
         <div class="col-md-12 div-right" style="margin-bottom: 10px;">
             <label>關鍵字:</label>
             <input type="text" id="filter">
-            <input type="button" class="" style="" value="送出查詢" onclick="searchdata()" />
-            <input type="button" class="" style="" value="清除內容" onclick="clearfilter()" />
-            <table id="QAGrid"></table>
+            <input type="button"  value="送出查詢" onclick="searchdata()" />
+            <input type="button" style="margin-bottom:10px" value="清除內容" onclick="clearfilter()" />
+            <table id="QAGrid" ></table>
             <div id="pager"></div>
         </div>
-        <div class="col-md-12 div-right" style="margin-top: 10px;">
+        <div class="col-md-12 div-right">
             <input type="button" style="" value="我要發問" onclick="location.href='SendQA.aspx'" />
         </div>
     </div>

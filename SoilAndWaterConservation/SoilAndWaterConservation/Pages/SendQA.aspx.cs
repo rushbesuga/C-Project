@@ -52,7 +52,7 @@ public partial class Pages_SendQA : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, this.GetType(), "", "alert(\"請輸入Email信箱 !\");", true);
             return;
         }
-        else if (string.IsNullOrEmpty(tbcontent.Text)) { 
+        else if (string.IsNullOrEmpty(tbcontent.Value)) { 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "", "alert(\"請輸入問題 !\");", true);
             return;
         }
@@ -77,7 +77,7 @@ public partial class Pages_SendQA : System.Web.UI.Page
             param.Add("gender", gender);
             param.Add("phone", tbphone.Text);
             param.Add("email", tbemail.Text);
-            param.Add("content", tbcontent.Text);
+            param.Add("content", tbcontent.Value);
             sqlFactory.ModifyData(sSql, param);
             Response.Redirect("../pages/QAandMessageBoard.aspx");
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "", "alert('發問成功');", true);
@@ -94,7 +94,7 @@ public partial class Pages_SendQA : System.Web.UI.Page
         tbemailtitle.Text = "";
         tbphone.Text = "";
         tbemail.Text = "";
-        tbcontent.Text = "";
+        tbcontent.Value = "";
         rbmale.Checked = true;
     }
 }

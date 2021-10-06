@@ -20,6 +20,8 @@ public class QAandMessageBoardHandler : IHttpHandler
         string sonpublic = (context.Request.Form["public"] != null) ? context.Request.Form["public"] : context.Request["public"];
         string sprocflage = (context.Request.Form["procflage"] != null) ? context.Request.Form["procflage"] : context.Request["procflage"];
         string sdate = (context.Request.Form["date"] != null) ? context.Request.Form["date"] : context.Request["date"];
+        string sproc = (context.Request.Form["proc"] != null) ? context.Request.Form["proc"] : context.Request["proc"];
+
         SqlFactory sf = new SqlFactory();
         DataTable dt = new DataTable();
         Dictionary<string, string> dbparams = new Dictionary<string, string>();
@@ -29,7 +31,9 @@ public class QAandMessageBoardHandler : IHttpHandler
         {
             case "tbl_qaandmessage_data":
                 sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,CONVERT(VARCHAR(19), row_recovery_time , 120) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
- from tbl_qaandmessage_data order by row_id";
+ from tbl_qaandmessage_data
+where row_recovery_public='0'
+ order by row_id";
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);
@@ -37,7 +41,7 @@ public class QAandMessageBoardHandler : IHttpHandler
                 break;
             case "tbl_qaandmessage_data_Filter":
                 sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,CONVERT(VARCHAR(19), row_recovery_time , 120) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
- from tbl_qaandmessage_data where row_content like '%" + sFilter + "%'  order by row_id";
+ from tbl_qaandmessage_data where row_content like '%" + sFilter + "%' or row_title like '%" + sFilter + "%'   order by row_id";
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);
@@ -69,13 +73,26 @@ public class QAandMessageBoardHandler : IHttpHandler
                 from tbl_qaandmessage_data where 1=1 ";
                 if (!string.IsNullOrEmpty(sFilter))
                 {
-                    sSql += @" and row_content like '%" + sFilter + "%' ";
+                    sSql += @" and row_content like '%" + sFilter + "%' or row_name like '%" + sFilter + "%' or row_title like '%" + sFilter + "%' ";
                 }
                 if (!string.IsNullOrEmpty(sdate))
                 {
                     sSql += @" and cast(row_createtime as date)='" + sdate + "'";
                 }
+                if (sproc!="2")
+                {
+                    sSql += @"and row_recovery_procflag='"+sproc+"'";
+                }
                 sSql += @"order by row_id";
+                JSONresult = "";
+                dt = sf.QueryData(sSql, null);
+                JSONresult = JsonConvert.SerializeObject(dt);
+                context.Response.Write(JSONresult);
+                break;
+            case "tbl_qaandmessage_Details":
+                sSql = @"select row_id,row_title,SUBSTRING(row_name,1,1)+'O'+SUBSTRING(row_name,3,len(row_name)) as row_name,row_gender,row_phone,row_email,row_content
+                         ,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,isnull(row_recovery_public,'1') as row_recovery_public,isnull(row_recovery_procflag,'0') as row_recovery_procflag
+                         from tbl_qaandmessage_data where row_id=" + sid;
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);

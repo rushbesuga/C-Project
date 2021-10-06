@@ -7,7 +7,7 @@
     <script src='/Scripts/QAandMessageBoard.js' type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            getQAandMessageBoardDetail();
+            getQAandMessageBoardmaintenanceDetail();
         })
     </script>
     <div class="container-fluid">
@@ -82,7 +82,8 @@
                     問題內容(*必填):
                 </div>
                 <div class="col-md-7" style="font-size: 20px; text-align: left">
-                    <input type="text" readonly="readonly" id="tbcontent" style="min-height: 150px; min-width: 100%; background-color: lightgray;" />
+                    <textarea readonly="readonly" id="tbcontent" style="min-height: 150px; min-width: 100%; background-color: lightgray;" >
+                        </textarea>
                 </div>
             </div>
             </div >
@@ -125,7 +126,8 @@
                         回覆內容:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
-                        <input type="text" id="tbrecovery_content" style="min-height: 150px; min-width: 100%" />
+                        <textarea id="tbrecovery_content" style="min-height: 150px; min-width: 100%" >
+                        </textarea>
                     </div>
                 </div>
                 <div class="col-md-12 div-center" style="margin-bottom: 10px;">
