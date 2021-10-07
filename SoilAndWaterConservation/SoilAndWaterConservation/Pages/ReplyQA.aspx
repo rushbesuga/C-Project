@@ -113,7 +113,7 @@
                     <div class="col-md-1" style="font-size: 20px; text-align: right">
                     </div>
                     <div class="col-md-4" style="font-size: 20px; text-align: center">
-                        回復主旨:
+                        公開問題內容:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
                         <input type="text" id="tbrecovery_title" style="min-width: 100%" />
@@ -123,7 +123,7 @@
                     <div class="col-md-1" style="font-size: 20px; text-align: right">
                     </div>
                     <div class="col-md-4" style="font-size: 20px; text-align: center">
-                        回覆內容:
+                        公開問題解答:
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
                         <textarea id="tbrecovery_content" style="min-height: 150px; min-width: 100%" >
@@ -140,7 +140,7 @@
                         <input type="radio" id="rbpublic" name="public" value="0" />
                         <label>公開回覆</label>
                         <input type="radio" id="rbunpublic" name="public" value="1" />
-                        <label>不公開回覆</label><br>
+                        <label>不公開回覆</label>&nbsp<label style="color:darkred"> ※勾選公開將顯示於民眾頁面 </label><br>
                         <input type="radio" id="rbprocflag" name="flag" value="0" />
                         <label>已處理</label>
                         <input type="radio" id="rbunprocflag" name="flag" value="1" />

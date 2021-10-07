@@ -15,7 +15,7 @@
             <a class="div-cal-main-title">水土保持常見問答</a>
         </div>
         <div class="col-md-12 div-left" style="margin-bottom: 10px;">
-            <div class="col-md-12 div-card-2" style="margin-bottom: 10px; background-color: lightgray; font-size: 25px">
+            <div class="col-md-12 div-card-2" style="margin-bottom: 10px; font-size: 25px;border-radius:10px">
                 <label id="title"></label>
 
             </div>
