@@ -30,18 +30,14 @@ public class QAandMessageBoardHandler : IHttpHandler
         switch (sType)
         {
             case "tbl_qaandmessage_data":
-                sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,CONVERT(VARCHAR(19), row_recovery_time , 120) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
+                sSql = @"select row_id,row_recovery_title,row_name,row_gender,row_phone,row_email,row_content,convert(varchar, row_createtime, 111) as row_createtime,convert(varchar, row_recovery_time, 111) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
  from tbl_qaandmessage_data
-where row_recovery_public='0'
- order by row_id";
-                JSONresult = "";
-                dt = sf.QueryData(sSql, null);
-                JSONresult = JsonConvert.SerializeObject(dt);
-                context.Response.Write(JSONresult);
-                break;
-            case "tbl_qaandmessage_data_Filter":
-                sSql = @"select row_id,row_title,row_name,row_gender,row_phone,row_email,row_content,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,CONVERT(VARCHAR(19), row_recovery_time , 120) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,row_recovery_public,row_recovery_procflag
- from tbl_qaandmessage_data where row_content like '%" + sFilter + "%' or row_title like '%" + sFilter + "%'   order by row_id";
+where row_recovery_public='0' and row_recovery_title!=''";
+                if (!string.IsNullOrEmpty(sFilter))
+                {
+                    sSql += "and  row_recovery_title like '%" + sFilter + "%' or row_recovery_content like '%" + sFilter + "%'";
+                }
+                sSql += "order by row_id";
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);
@@ -79,9 +75,9 @@ where row_recovery_public='0'
                 {
                     sSql += @" and cast(row_createtime as date)='" + sdate + "'";
                 }
-                if (sproc!="2")
+                if (sproc != "2")
                 {
-                    sSql += @"and row_recovery_procflag='"+sproc+"'";
+                    sSql += @"and row_recovery_procflag='" + sproc + "'";
                 }
                 sSql += @"order by row_id";
                 JSONresult = "";
@@ -91,7 +87,7 @@ where row_recovery_public='0'
                 break;
             case "tbl_qaandmessage_Details":
                 sSql = @"select row_id,row_title,SUBSTRING(row_name,1,1)+'O'+SUBSTRING(row_name,3,len(row_name)) as row_name,row_gender,row_phone,row_email,row_content
-                         ,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,isnull(row_recovery_public,'1') as row_recovery_public,isnull(row_recovery_procflag,'0') as row_recovery_procflag
+                         ,CONVERT(VARCHAR(19), row_createtime , 120) as row_createtime,convert(varchar, row_recovery_time, 111) as row_recovery_time,row_recovery_name,row_recovery_title,row_recovery_content,isnull(row_recovery_public,'1') as row_recovery_public,isnull(row_recovery_procflag,'0') as row_recovery_procflag
                          from tbl_qaandmessage_data where row_id=" + sid;
                 JSONresult = "";
                 dt = sf.QueryData(sSql, null);

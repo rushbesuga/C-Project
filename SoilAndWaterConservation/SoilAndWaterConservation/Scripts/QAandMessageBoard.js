@@ -9,8 +9,8 @@
         mtype: 'GET',
         colModel: [
             { name: 'row_id', label: '編號', hidden: true },
-            { name: 'row_title', label: '標題' },
-            { name: 'row_createtime', label: '發布日期', align: 'center',width:60},
+            { name: 'row_recovery_title', label: '標題' },
+            { name: 'row_createtime', label: '發布日期', align: 'center',width:40},
         ],
         pager: '#pager',
         width: '100%',
@@ -35,7 +35,7 @@
 }
 function searchdata() {
     $("#QAGrid").jqGrid('setGridParam', {
-        url: '../Service/QAandMessageBoardHandler.ashx?Type=tbl_qaandmessage_data_Filter&Filter=' + $("#filter").val(),
+        url: '../Service/QAandMessageBoardHandler.ashx?Type=tbl_qaandmessage_data&Filter=' + $("#filter").val(),
         datatype: 'json',
         page: 1
     }).trigger('reloadGrid');
@@ -128,13 +128,12 @@ function findGetParameter(parameterName) {
 function getQAandMessageBoardDetail() {
     $.ajax({
         type: "GET",
-        async: false,
+        async: false, 
         url: '../Service/QAandMessageBoardHandler.ashx?Type=tbl_qaandmessage_Details&id=' + findGetParameter('id'),
         dataType: "json",
         success: function (response) {
             $('#tbid').val(response[0].row_id);
             $('#tbname').val(response[0].row_name);
-            //$('#tbname').text(response[].plan_audit_cal_price);
             if (response[0].row_gender == '1')
                 $('#rbfeamle').attr("checked", true);
             else
@@ -147,6 +146,11 @@ function getQAandMessageBoardDetail() {
             $('#tbrecovery_name').val(response[0].row_recovery_name);
             $('#tbrecovery_title').val(response[0].row_recovery_title);
             $('#tbrecovery_content').val(response[0].row_recovery_content);
+            //ChekcQA.aspx使用
+            $('#title').html(response[0].row_recovery_title);
+            $('#content').html(response[0].row_recovery_content);
+
+            $('#Remark').html('發布人員:' + response[0].row_recovery_name + '&nbsp|&nbsp' + '更新日期:' + response[0].row_recovery_time);
             if (response[0].row_recovery_public == '1')
                 $('#rbunpublic').attr("checked", true);
             else
