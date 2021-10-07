@@ -12,9 +12,13 @@
     font-size:20px;
 }
 .div-card {
-    background-color: #E9E6E6 ;
+    background-color: #E9E6E6;
     margin-bottom: 10px;
     border-radius: 10px;
+}
+.div-card-2 {
+    background-color: #E9E6E6;
+    border-radius: 3px;
 }
 .reserve-table {
     border-collapse: collapse;
