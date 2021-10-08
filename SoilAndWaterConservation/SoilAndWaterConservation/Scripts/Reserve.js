@@ -60,7 +60,8 @@ function genCalendarDate(nowdate_) {
                     dataType: "json",
                     success: function (responseMorning) {
                         var now__ = new Date();
-                        var DataDate = Date.parse(aDate[i]);
+                        var DataDate = new Date(aDate[i]);
+                        DataDate.setHours(DataDate.getHours() + 11);
                         if (DataDate > now__) {
                             if (responseMorning[1].text == '已約') {
                                 MorningHtml += '<td style="cursor:not-allowed; border-width: 3pt 1pt 1pt; border-style: solid; border-color: white; background: ' + responseMorning[0].color + '; text-align: center; vertical-align: middle; color: windowtext; font-size: 18pt; font-family: Arial; border-image: initial;">' +
@@ -104,7 +105,8 @@ function genCalendarDate(nowdate_) {
                     dataType: "json",
                     success: function (responseAfteroon) {
                         var now__ = new Date();
-                        var DataDate = Date.parse(aDate[i]);
+                        var DataDate = new Date(aDate[i]);
+                        DataDate.setHours(DataDate.getHours() + 16);
                         if (DataDate > now__) {
                             if (responseAfteroon[1].text == '已約') {
                                 AfternoonHtml += '<td style="cursor:not-allowed;border-width: 3pt 1pt 1pt; border-style: solid; border-color: white; background: ' + responseAfteroon[0].color + '; text-align: center; vertical-align: middle; color: windowtext; font-size: 18pt; font-family: Arial; border-image: initial;">' +

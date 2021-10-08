@@ -28,30 +28,28 @@
             <span>狀態：</span>
         </div>
         <div class="col-md-9 div-left" style="font-size: 20px">
-            <input type="checkbox" id="cbReserveItemType1" class="cbReserveItemType" value="已核定">
-            <label for="cbReserveItemType1">已核定</label>
-            <input type="checkbox" id="cbReserveItemType2" class="cbReserveItemType" value="施工中">
-            <label for="cbReserveItemType2">施工中</label>
-            <input type="checkbox" id="cbReserveItemType3" class="cbReserveItemType" value="已完工">
-            <label for="cbReserveItemType3">已完工</label>
-            <input type="checkbox" id="cbReserveItemType4" class="cbReserveItemType" value="停工">
-            <label for="cbReserveItemType4">停工</label>
+            <input type="checkbox" id="cbPlanStatusItemType1" class="cbPlanStatusItemType" value="已核定">
+            <label for="cbPlanStatusItemType1">已核定</label>
+            <input type="checkbox" id="cbPlanStatusItemType2" class="cbPlanStatusItemType" value="施工中">
+            <label for="cbPlanStatusItemType2">施工中</label>
+            <input type="checkbox" id="cbPlanStatusItemType3" class="cbPlanStatusItemType" value="已完工">
+            <label for="cbPlanStatusItemType3">已完工</label>
         </div>
         <div class="col-md-3 div-right" style="font-size: 20px;">
             <label>日期類別：</label>
         </div>
         <div class="col-md-8 div-left" style="font-size: 20px;">
             <select id="dl_dev_type">
-                <option>核定日</option>
-                <option>開工期限</option>
-                <option>申報開工日</option>
-                <option>完工期限</option>
-                <option>申報完工日</option>
+                <option value="plan_audit_date">核定日</option>
+                <option value="plan_start_work_expiration_date">開工期限</option>
+                <option value="plan_start_work_date">申報開工日</option>
+                <option value="plan_finish_work_expiration_date">完工期限</option>
+                <option value="plan_finish_work_date">申報完工日</option>
             </select>
             起始日:
             <input type="date" id="StartDate">
             結束日:
-            <input type="date" id="EndtDate">
+            <input type="date" id="EndDate">
         </div>
         <div class="col-md-1 div-right" style="font-size: 20px;">
             <input type="button" value="查詢" onclick="btnQueryPlanData();" />
@@ -60,10 +58,10 @@
             <span><br /></span>
         </div>
         <div class="col-md-6 div-right" style="font-size: 20px;">
-            <input type="button" style="min-width:100%" value="快查：10日內失效案件" onclick="btnQuery10Days();" />
+            <input type="button" style="min-width:100%" value="快查：10日內失效案件" onclick="btnQuickQueryPlanData(10);" />
         </div>
         <div class="col-md-6 div-left" style="font-size: 20px;">
-            <input type="button" style="min-width:100%" value="快查：3日內失效案件" onclick="btnQuery3Days();" />
+            <input type="button" style="min-width:100%" value="快查：3日內失效案件" onclick="btnQuickQueryPlanData(3);" />
         </div>
         <div class="col-md-12 div-right" style="font-size: 20px;">
             <span><br /></span>

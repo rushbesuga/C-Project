@@ -256,7 +256,7 @@ public class ReserveManageHandler : IHttpHandler, System.Web.SessionState.IReadO
                 break;
             case "星期五":
                 sResultDate += calDecreaseDate(Dnow, 4) + ",";
-                sResultDate += Dnow.ToString("yyyy/MM/dd") + ",";
+                sResultDate += Dnow.ToString("yyyy/MM/dd");
                 break;
         }
         return sResultDate;

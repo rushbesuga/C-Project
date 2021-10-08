@@ -83,7 +83,8 @@ function genCalendarDate(nowdate_) {
                         dataType: "json",
                         success: function (responseMorning) {
                             var now__ = new Date();
-                            var DataDate = Date.parse(aDate[i]);
+                            var DataDate = new Date(aDate[i]);
+                            DataDate.setHours(DataDate.getHours() + 16);
                             if (DataDate > now__) {
                                 if (atime[j] == '09:00-10:00') {
                                     Time09_10Html += genTimeTd(responseMorning[1].text, responseMorning[0].color, aDate[i], atime[j], false)
