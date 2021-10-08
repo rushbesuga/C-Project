@@ -57,7 +57,8 @@ public partial class Account_Login : Page
             DataTable dt = sf.QueryData(sSQl, DParameter);
             if (dt.Rows.Count>0)
             {
-                Session["USER"] = UserName.Text;
+                Session["USER"] = dt.Rows[0]["user_id"];
+                Session["LEVEL"] = dt.Rows[0]["level"];
                 sf.InsertLoginLog(UserName.Text.Trim());
                 Response.Redirect("../Default_Admin.aspx");
             }
