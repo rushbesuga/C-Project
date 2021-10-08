@@ -97,3 +97,24 @@
     vertical-align: text-top;
     white-space: normal !important;
 }
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .noBreak {
+        break-inside: avoid;
+    }
+
+    .noPrint {
+        display: none;
+    }
+}
+@page {
+    size: A4 portrait;
+    margin-top: 3cm;
+}
+
+@page :first {
+    margin-left: 4cm;
+}

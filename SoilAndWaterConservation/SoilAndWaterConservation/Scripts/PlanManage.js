@@ -9,14 +9,14 @@
         mtype: 'GET',
         colModel: [
             { name: 'plan_id', label: '操作', align: 'center', formatter: showFuncButton },
+            { name: 'plan_id', label: 'QRCODE', align: 'center', formatter: showQRButton },
             { name: 'plan_name', label: '計畫名稱', align: 'left' },
             { name: 'plan_case_no', label: '案號', align: 'center', align: 'left' },
             { name: 'plan_status', label: '案件狀態', align: 'center', align: 'center' },
             { name: 'plan_start_work_extend_date', label: '申請開工展延', align: 'center' },
             { name: 'plan_start_work_expiration_date', label: '開工期限', align: 'center' },
             { name: 'plan_finish_work_extend_date', label: '申請完工展延', align: 'center' },
-            { name: 'plan_finish_work_date', label: '核定完工日期', align: 'center' },
-            { name: 'plan_id', label: 'QRCODE', align: 'center', formatter: showQRButton }
+            { name: 'plan_finish_work_date', label: '核定完工日期', align: 'center' }
         ],
         pager: '#pager',
         width: '100%',
@@ -85,5 +85,5 @@ function btnDelPlan(plan_id) {
     }
 }
 function btnQrcodePage(plan_id) {
-    window.location = "QRCODE?plan_id=" + plan_id;
+    window.location = "PlanQrcode?plan_id=" + plan_id;
 }
