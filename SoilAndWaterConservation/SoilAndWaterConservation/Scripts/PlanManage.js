@@ -55,7 +55,12 @@ function btnQueryPlanData() {
 }
 
 function btnQuickQueryPlanData(day) {
-
+    $('#tbKeyword').val('');
+    $('#cbPlanStatusItemType1').prop("checked", false);
+    $('#cbPlanStatusItemType2').prop("checked", false); 
+    $('#cbPlanStatusItemType3').prop("checked", false);
+    $('#StartDate').val('');
+    $('#EndDate').val('');
     $("#grid").jqGrid('setGridParam', {
         url: '../Service/PlanManageHandler.ashx?Type=QuickQuery&Days='+day,
         datatype: 'json',
