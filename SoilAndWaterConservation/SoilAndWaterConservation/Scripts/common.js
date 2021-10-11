@@ -4,6 +4,9 @@ function toCurrency(num) {
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     return parts.join('.');
 }
+function NotYet() {
+    alert('此功能開發中COMMING SOON!')
+}
 function getTownOption(elememt_id) {
     elememt_id = '#' + elememt_id;
     $(elememt_id).empty();

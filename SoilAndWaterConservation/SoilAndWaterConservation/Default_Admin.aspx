@@ -13,7 +13,8 @@
     </div>
     <div class="row">
         <div class="col-md-4 div-center">
-            <a href="Pages/PlanManage">
+            <%--<a href="Pages/PlanManage">--%>
+            <a onclick="NotYet()">
                 <image class="IndexImage" src="images/admin-default-left.png"></image>
             </a>
         </div>
@@ -23,7 +24,8 @@
             </a>
         </div>
         <div class="col-md-4 div-center">
-            <a href="Pages/PlanUpload">
+            <%--<a href="Pages/PlanUpload">--%>
+            <a onclick="NotYet()">
                 <image class="IndexImage" src="images/admin-default-right.png"></image>
             </a>
         </div>
@@ -38,7 +40,8 @@
             </a>
         </div>
         <div class="col-md-6 div-center">
-            <a href="Pages/PlanQUeryDownload">
+            <%--<a href="Pages/PlanQUeryDownload">--%>
+            <a onclick="NotYet()">
                 <image class="IndexImage" src="images/admin-default-down-right.png"></image>
             </a>
         </div>
