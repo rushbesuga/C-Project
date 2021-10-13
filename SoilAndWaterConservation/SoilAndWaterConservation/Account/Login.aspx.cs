@@ -38,11 +38,11 @@ public partial class Account_Login : Page
         if (IsValid)
         {
             string sValidation = Session["ValidateNum"] as string ?? Guid.NewGuid().ToString();
-            if (txtCheck.Text != sValidation)
-            {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "", "alert('登入失敗，驗證碼有誤！');", true);
-                return;
-            }
+            //if (txtCheck.Text != sValidation)
+            //{
+                //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "", "alert('登入失敗，驗證碼有誤！');", true);
+                //return;
+            //}
             HttpCookie cookie = new HttpCookie("Info");
             TimeSpan ts = new TimeSpan(1, 0, 0, 0);//cookie有效作用时间，具体查msdn
             cookie.Values.Add("AdminID", UserName.Text.Trim());//增加属性

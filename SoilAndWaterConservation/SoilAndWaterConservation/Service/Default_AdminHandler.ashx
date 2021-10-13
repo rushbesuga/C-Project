@@ -48,7 +48,7 @@ public class Default_AdminHandler : IHttpHandler, System.Web.SessionState.IReadO
                         (select count(*)
                         from tbl_qaandmessage_data 
                         where isnull(row_recovery_procflag,'1') = '1') as '問答未處置',
-                        (select count(plan_id)
+                        (select count(plan_upload_id)
                         from tbl_plan_upload_data ) as '完成上傳數'";
                 dt = sf.QueryData(sSql, null);
                 JSONresult = JsonConvert.SerializeObject(dt);

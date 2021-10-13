@@ -1,4 +1,43 @@
-﻿//轉千分位
+﻿var onloadCallback = function () {
+
+    grecaptcha.render('googleVerify', {
+        'sitekey': '6Lc1HMccAAAAAL2UmvpaTfjj4F8mF51pWU_kgh0D',
+        'theme': 'light',
+        'size': 'normal',
+        'callback': verifyCallback,
+        'expired-callback': expired,
+        'error-callback': error
+    });
+
+    function verifyCallback(token) {
+        $.ajax({
+            type: "GET",
+            async: false,
+            url: '../Service/CommonHandler.ashx?Type=googleVerify&captchaToken=' + token,
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    $('#DivLogin').show();
+                }
+                else {
+                    $('#DivLogin').hide();
+                    alert('驗證錯誤')
+                }
+            },
+            error: function (thrownError) {
+                alert('驗證錯誤')
+            }
+        });
+    }
+    function expired(token) {
+        alert('驗證過期')
+    }
+    function error(token) {
+        alert('驗證錯誤')
+    }
+
+}
+//轉千分位
 function toCurrency(num) {
     var parts = num.toString().split('.');
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');

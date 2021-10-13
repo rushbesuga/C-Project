@@ -26,7 +26,7 @@ public class Validation : IHttpHandler, IRequiresSessionState {
 
     private string CreateRandomNum(int NumCount)
     {
-        string allChar = "0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+        string allChar = "0,1,2,3,4,5,6,7,8,9";
         //string allChar = "0,1,2,3,4,5,6,7,8,9";
         string[] allCharArray = allChar.Split(','); //分成陣列
         string randomNum = "";
@@ -38,7 +38,7 @@ public class Validation : IHttpHandler, IRequiresSessionState {
             {
                 rand = new Random(i * temp * ((int)DateTime.Now.Ticks));
             }
-            int t = rand.Next(35);
+            int t = rand.Next(9);
             if (temp == t)
             {
                 return CreateRandomNum(NumCount);
