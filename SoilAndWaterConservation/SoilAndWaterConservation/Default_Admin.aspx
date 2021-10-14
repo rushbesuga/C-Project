@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-4 div-center">
             <%--<a href="Pages/PlanUpload">--%>
-            <a onclick="NotYet()">
+            <a href="Pages/PlanUploadManage">
                 <image class="IndexImage" src="images/admin-default-right.png"></image>
             </a>
         </div>
@@ -41,7 +41,7 @@
         </div>
         <div class="col-md-6 div-center">
             <%--<a href="Pages/PlanQUeryDownload">--%>
-            <a onclick="NotYet()">
+            <a href="Pages/PlanUploadManage">
                 <image class="IndexImage" src="images/admin-default-down-right.png"></image>
             </a>
         </div>

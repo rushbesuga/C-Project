@@ -19,7 +19,7 @@
             <a class="div-cal-main-title">水土保持常見問答</a>
         </div>
         <div class="col-md-12 div-right" style="margin-bottom: 10px;">
-            <label>關鍵字:</label>
+            <label>關鍵字：</label>
             <input type="text" id="filter">
             <input type="button"  value="送出查詢" onclick="searchdata()" />
             <input type="button" style="margin-bottom:10px" value="清除內容" onclick="clearfilter()" />

@@ -88,7 +88,7 @@
                                 </li>
                                 <li>
                                     <%--<a runat="server" href="~/Pages/PlanUpload">--%>
-                                    <a onclick="NotYet()">
+                                    <a runat="server" href="~/Pages/PlanUploadManage">
                                         <i class="fas fa-cloud-upload-alt"></i>簡易水土保持計畫上傳
                                     </a>
                                 </li>
