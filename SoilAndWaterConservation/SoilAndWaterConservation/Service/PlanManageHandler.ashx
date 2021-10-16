@@ -51,6 +51,7 @@ public class PlanManageHandler : IHttpHandler, System.Web.SessionState.IReadOnly
 
             case "GetPlanDetailData":
                 sSql = @"select plan_id,
+                            plan_id as plan_id_qrcode,
                             plan_case_no,
                             plan_name,
                             plan_audit_date,

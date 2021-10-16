@@ -31,5 +31,12 @@ public partial class _Default_Admin : Page
         {
             Response.Redirect("Default.aspx");
         }
+        if (Session["LEVEL"] != null)
+        {
+            if (Session["LEVEL"].ToString() == "2")
+                hidlevelcontrol.Value = "1";
+            else if (Session["LEVEL"].ToString() == "1" || Session["LEVEL"].ToString() == "9")
+                hidlevelcontrol.Value = "0";
+        }
     }
 }

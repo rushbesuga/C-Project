@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="管理者模式" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default_Admin.aspx.cs" Inherits="_Default_Admin" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField runat="server" ID="hidlevelcontrol" />
     <script type="text/javascript" src="Scripts/Default_Admin.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -12,35 +13,32 @@
         水土保持科與屏科人員維護頁面
     </div>
     <div class="row">
-        <div class="col-md-4 div-center">
-            <%--<a href="Pages/PlanManage">--%>
-            <a onclick="NotYet()">
+        <div class="col-md-4 div-center" id="admin-default-left">
+            <a href="Pages/PlanManage">
                 <image class="IndexImage" src="images/admin-default-left.png"></image>
             </a>
         </div>
-        <div class="col-md-4 div-center">
+        <div class="col-md-4 div-center" id="admin-default-center">
             <a href="Pages/ReserveManage">
                 <image class="IndexImage" src="images/admin-default-center.png"></image>
             </a>
         </div>
-        <div class="col-md-4 div-center">
-            <%--<a href="Pages/PlanUpload">--%>
+        <div class="col-md-4 div-center" id="admin-default-right">
             <a href="Pages/PlanUploadManage">
                 <image class="IndexImage" src="images/admin-default-right.png"></image>
             </a>
         </div>
-    </div>
-    <div class="row">
-        <%--<div class="col-md-4 div-center">
-            <a href="Pages/PlanQrcode"><image class="IndexImage" src="images/admin-default-down-left.png"></image></a>
-        </div>--%>
-        <div class="col-md-6 div-center">
+        <div class="col-md-4 div-center" id="admin-default-down-left">
+            <a href="Pages/PlanManage">
+                <image class="IndexImage" src="images/admin-default-down-left.png"></image>
+            </a>
+        </div>
+        <div class="col-md-4 div-center" id="admin-default-down-center">
             <a href="Pages/QAMaintenance">
                 <image class="IndexImage" src="images/admin-default-down-center.png"></image>
             </a>
         </div>
-        <div class="col-md-6 div-center">
-            <%--<a href="Pages/PlanQUeryDownload">--%>
+        <div class="col-md-4 div-center" id="admin-default-down-right">
             <a href="Pages/PlanUploadManage">
                 <image class="IndexImage" src="images/admin-default-down-right.png"></image>
             </a>

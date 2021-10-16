@@ -66,6 +66,13 @@ public partial class SiteMaster : MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["LEVEL"] != null)
+        {
+            if (Session["LEVEL"].ToString() == "2")
+                hidlevelcontro_master.Value = "1";
+            else if (Session["LEVEL"].ToString() == "1" || Session["LEVEL"].ToString() == "9")
+                hidlevelcontro_master.Value = "0";
+        }
     }
 
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

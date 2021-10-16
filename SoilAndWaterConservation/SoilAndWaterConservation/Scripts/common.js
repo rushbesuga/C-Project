@@ -78,3 +78,21 @@ function findGetParameter(parameterName) {
     }
     return result;
 }
+function AuthShow() {
+    if ($('#hidlevelcontro_master').val() == "0") {
+        $('#admin-menu-default-left').show();
+        $('#admin-menu-default-center').show();
+        $('#admin-menu-default-right').show();
+        $('#admin-menu-default-down-left').hide();
+        $('#admin-menu-default-down-center').show();
+        $('#admin-menu-default-down-right').hide();
+    }
+    else if ($('#hidlevelcontro_master').val() == "1") {
+        $('#admin-menu-default-left').hide();
+        $('#admin-menu-default-center').hide();
+        $('#admin-menu-default-right').hide();
+        $('#admin-menu-default-down-left').show();
+        $('#admin-menu-default-down-center').hide();
+        $('#admin-menu-default-down-right').show();
+    }
+}

@@ -1,4 +1,22 @@
 ﻿function loadDataCount() {
+
+    if ($('#MainContent_hidlevelcontrol').val() == "0") {
+        $('#admin-default-left').show();
+        $('#admin-default-center').show();
+        $('#admin-default-right').show();
+        $('#admin-default-down-left').hide();
+        $('#admin-default-down-center').show();
+        $('#admin-default-down-right').hide();
+    }
+    else if ($('#MainContent_hidlevelcontrol').val() == "1") {
+        $('#admin-default-left').hide();
+        $('#admin-default-center').hide();
+        $('#admin-default-right').hide();
+        $('#admin-default-down-left').show();
+        $('#admin-default-down-center').hide();
+        $('#admin-default-down-right').show();
+    }
+
     $.ajax({
         type: "POST",
         async: false,

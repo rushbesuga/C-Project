@@ -9,7 +9,7 @@
         mtype: 'GET',
         colModel: [
             { name: 'plan_id', label: '操作', align: 'center', formatter: showFuncButton },
-            { name: 'plan_id', label: 'QRCODE', align: 'center', formatter: showQRButton },
+            { name: 'plan_id_qrcode', label: 'QRCODE', align: 'center', formatter: showQRButton },
             { name: 'plan_name', label: '計畫名稱', align: 'left' },
             { name: 'plan_case_no', label: '案號', align: 'center', align: 'left' },
             { name: 'plan_status', label: '案件狀態', align: 'center', align: 'center' },
@@ -35,6 +35,14 @@
     }
     function showQRButton(cellvalue, options, rowObject) {
         return "<button type='button'  onclick='btnQrcodePage(" + rowObject.plan_id + ")'>QRCODE</button>";
+    }
+    if ($('#MainContent_hidlevelcontrol').val() == "0") {
+        $('#btnadd').show();
+    }
+    else if ($('#MainContent_hidlevelcontrol').val() == "1") {
+        $("#grid").jqGrid('setColProp', 'plan_id', { width: 0 });
+        jQuery("#grid").setGridParam().hideCol("plan_id").trigger("reloadGrid");
+        $('#btnadd').hide();
     }
 }
 function btnQueryPlanData() {

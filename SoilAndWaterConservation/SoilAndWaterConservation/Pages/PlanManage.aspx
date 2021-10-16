@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="簡易水土保持計畫進度維護" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="PlanManage.aspx.cs" Inherits="Pages_PlanManage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:HiddenField runat="server" ID="hidlevelcontrol" />
     <link href="../Scripts/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
     <script src="../Scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <link href="../Scripts/jquery-ui-1.12.1/jquery-ui.theme.min.css" rel="stylesheet" />
@@ -67,7 +68,7 @@
             <span><br /></span>
         </div>
         <div class="col-md-12 div-left" style="font-size: 20px;">
-            <input type="button" value="新增" onclick="btnAddPlan();" />
+            <input type="button" id="btnadd" value="新增" onclick="btnAddPlan();" />
         </div>
         <div class="col-md-12 div-center" style="margin-bottom: 10px;">
             <table id="grid"></table>
