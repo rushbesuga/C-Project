@@ -2,6 +2,14 @@
     window.location = "PlanManage";
 }
 
+function resetDate(source_obj_id, target_obj_id) {
+    var source_date = $('#' + source_obj_id).val();
+    if (source_date != '') {
+        var ExtendDate = AddMonthDate(source_date, 6);
+        $('#' + target_obj_id).val(ExtendDate);
+    }
+}
+
 function checkWorkExtend1st(obj) {
     if (obj.checked) {
         var StartWorkExpirationDate = $('#tbStartWorkExpirationDate').val();
@@ -9,8 +17,10 @@ function checkWorkExtend1st(obj) {
         if (result == "true") {
             var today = new Date().format('yyyy-MM-dd');
             var ExtendDate = AddMonthDate(today, 6);
-            $('#tbStartWorkExtendDate1st').val(today);
+            $('#tbStartWorkExtendDate1st').val(today); 
             $('#tbStartWorkExpirationDate').val(ExtendDate);
+            $('#tbStartWorkExtendDate1st').removeAttr('readonly');
+            $('#tbStartWorkExtendDate1st').css("background-color", "");;
         }
         else {
             alert('開工期限超過10天，不可申請延展');
@@ -19,10 +29,11 @@ function checkWorkExtend1st(obj) {
     }
     else {
         $('#tbStartWorkExtendDate1st').val('');
+        $('#tbStartWorkExtendDate1st').attr('readonly', 'readonly');
+        $('#tbStartWorkExtendDate1st').css("background-color", "lightgray"); 
         CalStartWorkExpirationDate();
     }
 }
-
 
 function checkWorkExtend2nd(obj) {
     if (obj.checked) {
@@ -34,6 +45,8 @@ function checkWorkExtend2nd(obj) {
                 var ExtendDate = AddMonthDate(today, 6);
                 $('#tbStartWorkExtendDate2nd').val(today);
                 $('#tbStartWorkExpirationDate').val(ExtendDate);
+                $('#tbStartWorkExtendDate2nd').removeAttr('readonly');
+                $('#tbStartWorkExtendDate2nd').css("background-color", "");;
             }
             else {
                 alert('開工期限超過10天，不可申請延展');
@@ -50,6 +63,8 @@ function checkWorkExtend2nd(obj) {
         var date = $('#tbStartWorkExtendDate1st').val();
         var ExtendDate = AddMonthDate(date, 6);
         $('#tbStartWorkExpirationDate').val(ExtendDate);
+        $('#tbStartWorkExtendDate2nd').attr('readonly', 'readonly');
+        $('#tbStartWorkExtendDate2nd').css("background-color", "lightgray"); 
     }
 }
 
@@ -62,6 +77,8 @@ function checkFinishWorkExtend1st(obj) {
             var ExtendDate = AddMonthDate(today, 6);
             $('#tbFinishWorkExtendDate1st').val(today);
             $('#tbFinishWorkExpirationDate').val(ExtendDate);
+            $('#tbFinishWorkExtendDate1st').removeAttr('readonly');
+            $('#tbFinishWorkExtendDate1st').css("background-color", "");;
         }
         else {
             alert('完工期限超過10天，不可申請延展');
@@ -70,6 +87,8 @@ function checkFinishWorkExtend1st(obj) {
     }
     else {
         $('#tbFinishWorkExtendDate1st').val('');
+        $('#tbFinishWorkExtendDate1st').attr('readonly', 'readonly');
+        $('#tbFinishWorkExtendDate1st').css("background-color", "lightgray"); 
         CalFinishWorkExpirationDate();
     }
 }
@@ -84,6 +103,8 @@ function checkFinishWorkExtend2nd(obj) {
                 var ExtendDate = AddMonthDate(today, 6);
                 $('#tbFinishWorkExtendDate2nd').val(today);
                 $('#tbFinishWorkExpirationDate').val(ExtendDate);
+                $('#tbFinishWorkExtendDate2nd').removeAttr('readonly');
+                $('#tbFinishWorkExtendDate2nd').css("background-color", "");;
             }
             else {
                 alert('完工期限超過10天，不可申請延展');
@@ -100,6 +121,8 @@ function checkFinishWorkExtend2nd(obj) {
         var date = $('#tbFinishWorkExtendDate1st').val();
         var ExtendDate = AddMonthDate(date, 6);
         $('#tbFinishWorkExpirationDate').val(ExtendDate);
+        $('#tbFinishWorkExtendDate2nd').attr('readonly', 'readonly');
+        $('#tbFinishWorkExtendDate2nd').css("background-color", "lightgray"); 
     }
 }
 

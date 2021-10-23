@@ -4,6 +4,11 @@
     <script type="text/javascript" src="../Scripts/PlanDetail.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var today = new Date().toISOString().split('T')[0];
+            $('#tbStartWorkExtendDate1st').attr('min', today);
+            $('#tbStartWorkExtendDate2nd').attr('min', today);
+            $('#tbFinishWorkExtendDate1st').attr('min', today);
+            $('#tbFinishWorkExtendDate2nd').attr('min', today);
             var action = findGetParameter('action');
             if (action == 'edit') {
                 EditLoadData(findGetParameter('plan_id'));
@@ -49,14 +54,14 @@
         <label for="cbStartWorkExtendDate1st">第一次開工展延</label>
     </div>
     <div class="col-md-9 div-center" style="font-size: 20px">
-        <input type="date" id="tbStartWorkExtendDate1st" readonly="readonly" style="min-width: 100%;background-color:lightgray" />
+        <input type="date" id="tbStartWorkExtendDate1st" readonly="readonly" style="min-width: 100%;background-color:lightgray" onchange="resetDate('tbStartWorkExtendDate1st','tbStartWorkExpirationDate');"/>
     </div>
     <div class="col-md-3 div-right" style="font-size: 20px">
         <input type="checkbox" id="cbStartWorkExtendDate2nd" class="cbWorkExtend" value="第二次開工展延" onchange="checkWorkExtend2nd(this);">
         <label for="cbStartWorkExtendDate2nd">第二次開工展延</label>
     </div>
     <div class="col-md-9 div-center" style="font-size: 20px">
-        <input type="date" id="tbStartWorkExtendDate2nd" readonly="readonly" style="min-width: 100%;background-color:lightgray" />
+        <input type="date" id="tbStartWorkExtendDate2nd" readonly="readonly" style="min-width: 100%;background-color:lightgray" onchange="resetDate('tbStartWorkExtendDate2nd','tbStartWorkExpirationDate');" />
     </div>
     <div class="col-md-3 div-right div-card-2" style="font-size: 20px">
         <span>申報開工期限：</span>
@@ -68,21 +73,21 @@
         <span>申報開工日期：</span>
     </div>
     <div class="col-md-9 div-center" style="font-size: 20px">
-        <input type="date" required pattern="\d{4}-\d{2}-\d{2}" id="tbStartWorkDate" style="min-width: 100%;" onblur="CalFinishWorkExpirationDate();"/>
+        <input type="date" required pattern="\d{4}-\d{2}-\d{2}" id="tbStartWorkDate" style="min-width: 100%;" onchange="CalFinishWorkExpirationDate();"/>
     </div>
     <div class="col-md-3 div-right" style="font-size: 20px">
         <input type="checkbox" id="cbFinishWorkExtendDate1st" class="cbWorkExtend" value="第一次完工展延" onchange="checkFinishWorkExtend1st(this);">
         <label for="cbFinishWorkExtendDate1st">第一次完工展延</label>
     </div>
     <div class="col-md-9 div-center" style="font-size: 20px">
-        <input type="date" id="tbFinishWorkExtendDate1st" readonly="readonly" style="min-width: 100%;background-color:lightgray" />
+        <input type="date" id="tbFinishWorkExtendDate1st" readonly="readonly" style="min-width: 100%;background-color:lightgray" onchange="resetDate('tbFinishWorkExtendDate1st','tbFinishWorkExpirationDate');" />
     </div>
     <div class="col-md-3 div-right" style="font-size: 20px">
         <input type="checkbox" id="cbFinishWorkExtendDate2nd" class="cbWorkExtend" value="第二次完工展延" onchange="checkFinishWorkExtend2nd(this);">
         <label for="cbFinishWorkExtendDate2nd">第二次完工展延</label>
     </div>
     <div class="col-md-9 div-center" style="font-size: 20px">
-        <input type="date" id="tbFinishWorkExtendDate2nd" readonly="readonly" style="min-width: 100%;background-color:lightgray" />
+        <input type="date" id="tbFinishWorkExtendDate2nd" readonly="readonly" style="min-width: 100%;background-color:lightgray" onchange="resetDate('tbFinishWorkExtendDate2nd','tbFinishWorkExpirationDate');" />
     </div>
     <div class="col-md-3 div-right div-card-2" style="font-size: 20px">
         <span>申報完工期限：</span>
