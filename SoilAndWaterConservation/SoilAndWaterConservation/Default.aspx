@@ -19,10 +19,9 @@
     </div>
 
     <div class="row">
+        
         <div class="col-md-4 div-center">
-            <a href="https://serv.swcb.gov.tw/" target="_blank">
-            <image class="BottomIndexImage " src="images/hyperlink.png" href></image>
-                </a>
+            <a href="Pages/Reserve"><a href="https://serv.swcb.gov.tw/" target="_blank"><image class="IndexImage" src="images/mountain.png"></image></a>
         </div>
     </div>
 </asp:Content>
