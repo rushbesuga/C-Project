@@ -39,7 +39,7 @@
         loadonce: true
     });
     function showButton(cellvalue, options, rowObject) {
-        return '<button type="button"  onclick="gotopage(\'' + rowObject.plan_upload_case_no + '\')">選擇</button><button type="button"  onclick="delMessage(\'' + rowObject.plan_upload_case_no + '\')">刪除</button>';
+        return '<button type="button"  onclick="gotopage(\'' + rowObject.plan_upload_case_no + '\')">編輯</button><button type="button"  onclick="delMessage(\'' + rowObject.plan_upload_case_no + '\')">刪除</button>';
     }
     function downloadfile1(cellvalue, options, rowObject) {
         if (rowObject.plan_upload_file_name_1 != "")
@@ -97,7 +97,8 @@ function fileupload(file_id) {
     var data = new FormData();
     //## 將檔案append FormData
     var files = $('#file' + file_id)[0].files;
-    if (files[0].size > 5242880) {
+    var size = files[0].size;
+    if (size > 5242880) {
         alert('檔案超過限制大小5MB')
         return;
     }
@@ -170,13 +171,13 @@ function saveplanuploaddata() {
         alert('請輸入計畫名稱');
         return;
     }
-    if ($('#file1')[0].files != null) {
+    if ($('#file1')[0].files[0] != null) {
         fileupload('1');
     }
-    if ($('#file2')[0].files != null) {
+    if ($('#file2')[0].files[0] != null) {
         fileupload('2');
     }
-    if ($('#file3')[0].files != null) {
+    if ($('#file3')[0].files[0] != null) {
         fileupload('3');
     }
     //## 宣告一個FormData

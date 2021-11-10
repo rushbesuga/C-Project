@@ -164,14 +164,14 @@ function genTimeTd(isReserve, tdColor, date, time, overtime) {
     else if (isReserve == '已約' && overtime == true) {
         tdHtml = '<td style="cursor:pointer; border-width: 3pt 1pt 1pt; border-style: solid; border-color: white; background: gray; text-align: center; vertical-align: middle; color: windowtext; font-size: 18pt; font-family: Arial; border-image: initial;" onclick="OpenReserveWindows(\'' + date + '\',\'' + time + '\',\'' + isReserve + '\',\'' + overtime + '\',false);">' +
             '<p style = "margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;" >' +
-            '<span style="font-size: 18pt;">' + isReserve + '</span>' +
+            '<span style="font-size: 18pt;">已超過時間(' + isReserve + ')</span>' +
             '</p >' +
             '</td >';
     }
     else if (isReserve == '可預約' && overtime == true) {
         tdHtml = '<td style="cursor:pointer;border-width: 3pt 1pt 1pt; border-style: solid; border-color: white; background: gray; text-align: center; vertical-align: middle; color: windowtext; font-size: 18pt; font-family: Arial; border-image: initial;" onclick="OpenReserveWindows(\'' + date + '\',\'' + time + '\',\'' + isReserve + '\',\'' + overtime + '\',false);">' +
             '<p style = "margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;" >' +
-            '<span style="font-size: 18pt;">' + isReserve + '</span>' +
+            '<span style="font-size: 18pt;">已超過時間</span>' +
             '</p >' +
             '</td >';
     }

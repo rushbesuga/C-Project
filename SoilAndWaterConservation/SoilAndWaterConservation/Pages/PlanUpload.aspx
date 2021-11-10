@@ -35,7 +35,7 @@
                     <label>附件一：</label>
                 </div>
                 <div class="col-md-6 div-right" style="margin-bottom: 10px;">
-                    <input type="file" id="file1" name="filename" accept=".pdf, .doc, .docx, .xls">
+                    <input type="file" id="file1" name="filename" accept=".pdf, .doc, .docx, .xls, .xlsx, .jpg, .jpeg, .png">
                 </div>
                 <div class="col-md-3 div-right" style="margin-bottom: 10px;">
                     <input type="button" id="btnuploadfile1" value="上傳檔案" onclick="fileupload('1')">

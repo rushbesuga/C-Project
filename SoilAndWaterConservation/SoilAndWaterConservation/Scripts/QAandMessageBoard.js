@@ -78,7 +78,7 @@ function loadmaintenancejqgrid() {
 
     $("#QAGrid").jqGrid("setLabel", "rn", "編號");
     function showButton(cellvalue, options, rowObject) {
-        return "<button type='button'  onclick='gotopage(" + rowObject.row_id + ")'>選擇</button>&nbsp;<button type='button'  onclick='delMessage(" + rowObject.row_id + ")'>刪除</button>";
+        return "<button type='button'  onclick='gotopage(" + rowObject.row_id + ")'>編輯</button>&nbsp;<button type='button'  onclick='delMessage(" + rowObject.row_id + ")'>刪除</button>";
     }
 
     $('#rdproc').attr("checked", true);
