@@ -14,7 +14,11 @@ function addDays(date, days) {
     result.setDate(result.getDate() + days);
     return result;
 }
-
+Date.prototype.addDays = function (days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
 function genCalendarDate(nowdate_) {
     if (nowdate_ == 'next') {
         anowdate = nowdate.split('-');
@@ -59,7 +63,7 @@ function genCalendarDate(nowdate_) {
                     url: '../Service/ReserveHandler.ashx?Type=GetNormalReserveData&TimeType=Morning&NowDate=' + aDate[i] + '&TownID=' + $('#dl_town').val(),
                     dataType: "json",
                     success: function (responseMorning) {
-                        var now__ = new Date();
+                        var now__ = new Date().addDays(7);
                         var DataDate = new Date(aDate[i]);
                         DataDate.setHours(DataDate.getHours() + 11);
                         if (DataDate > now__) {
@@ -104,7 +108,7 @@ function genCalendarDate(nowdate_) {
                     url: '../Service/ReserveHandler.ashx?Type=GetNormalReserveData&TimeType=Afternoon&NowDate=' + aDate[i] + '&TownID=' + $('#dl_town').val(),
                     dataType: "json",
                     success: function (responseAfteroon) {
-                        var now__ = new Date();
+                        var now__ = new Date().addDays(7);
                         var DataDate = new Date(aDate[i]);
                         DataDate.setHours(DataDate.getHours() + 16);
                         if (DataDate > now__) {

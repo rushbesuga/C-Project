@@ -13,6 +13,50 @@
     </div>
     <div class="row content-text">
         <div class="col-md-12 div-center div-card">
+            <div class="col-md-12  div-cal-title">
+                <i class="fas fa-award"></i>
+                水土保持計畫書審查費<i class="fas fa-award"></i>
+            </div>
+            <div class="col-md-4 div-left">
+                開發面積(公頃)
+            </div>
+            <div class="col-md-6 div-center">
+                <input type="text" id="txbPlanArea" style="min-width:100%;"/>
+            </div>
+            <div class="col-md-2 div-center">
+                <input type="button" value="開始計算" onclick="getPlanAuditCalPrice();" />
+            </div>
+
+            <div class="col-md-12 div-left">
+                試算金額：需新台幣
+                <label id="plan_audit_cal_price" style="color: red;"></label>
+                元
+            </div>
+        </div>
+
+
+        <div class="col-md-12 div-center div-card">
+            <div class="col-md-12  div-cal-title">
+                <i class="fas fa-award"></i>
+                水土保持規劃書審查費<i class="fas fa-award"></i>
+            </div>
+            <div class="col-md-4 div-left">
+                開發面積(公頃)
+            </div>
+            <div class="col-md-6 div-center">
+                <input type="text" id="txbPlanningArea" style="min-width:100%;" />
+            </div>
+            <div class="col-md-2 div-center">
+                <input type="button" value="開始計算" onclick="getPlanningAuditCalPrice();" />
+            </div>
+
+            <div class="col-md-12 div-left">
+                試算金額：需新台幣
+                <label id="planning_audit_cal_price" style="color: red"></label>
+                元
+            </div>
+        </div>
+        <div class="col-md-12 div-center div-card">
             <div class="col-md-12 div-cal-title">
                 <i class="fas fa-award"></i>
                 水土保持保證金<i class="fas fa-award"></i>
@@ -59,6 +103,9 @@
                             </p>
                             <p>
                                 ※ 應繳保證金之數額計算至新台幣萬元為止，未滿萬元部分不計。
+                            </p>
+                            <p style="color:red">
+                                水土保持計畫由各級政府機關、國營事業機構或公立學校興辦者，免繳納保證金
                             </p>
                         </td>
                     </tr>
@@ -120,50 +167,7 @@
             </div>
 
         </div>
-        <div class="col-md-12 div-center div-card">
-            <div class="col-md-12  div-cal-title">
-                <i class="fas fa-award"></i>
-                水土保持計畫書審查費<i class="fas fa-award"></i>
-            </div>
-            <div class="col-md-4 div-left">
-                面積(公頃)
-            </div>
-            <div class="col-md-6 div-center">
-                <input type="text" id="txbPlanArea" style="min-width:100%;"/>
-            </div>
-            <div class="col-md-2 div-center">
-                <input type="button" value="開始計算" onclick="getPlanAuditCalPrice();" />
-            </div>
-
-            <div class="col-md-12 div-left">
-                試算金額：需新台幣
-                <label id="plan_audit_cal_price" style="color: red;"></label>
-                元
-            </div>
-        </div>
-
-
-        <div class="col-md-12 div-center div-card">
-            <div class="col-md-12  div-cal-title">
-                <i class="fas fa-award"></i>
-                水土保持規劃書審查費<i class="fas fa-award"></i>
-            </div>
-            <div class="col-md-4 div-left">
-                面積(公頃)
-            </div>
-            <div class="col-md-6 div-center">
-                <input type="text" id="txbPlanningArea" style="min-width:100%;" />
-            </div>
-            <div class="col-md-2 div-center">
-                <input type="button" value="開始計算" onclick="getPlanningAuditCalPrice();" />
-            </div>
-
-            <div class="col-md-12 div-left">
-                試算金額：需新台幣
-                <label id="planning_audit_cal_price" style="color: red"></label>
-                元
-            </div>
-        </div>
+        
 
         <div class="row">
         </div>

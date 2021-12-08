@@ -10,6 +10,7 @@
             $('#tbReserveContent').val('');
             $('#ReserveCalendar').show();
             $('#ReserveDetail').hide();
+            genCalendarDate('next');
         })
 
     </script>

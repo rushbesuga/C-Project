@@ -67,6 +67,23 @@
                     <textarea id="tbcontent" runat="server" style="min-height: 150px; min-width: 100%">
                         </textarea>
                 </div>
+
+            </div>
+            <div class="col-md-12 div-center" style="margin-bottom: 10px;">
+                <div class="col-md-1" style="font-size: 20px; text-align: right">
+                </div>
+                <div class="col-md-4" style="font-size: 20px; text-align: center">
+                    是否公開:
+                </div>
+                <div class="col-md-7" style="font-size: 20px; text-align: left">
+                    <asp:RadioButton ID="rbpublic" runat="server" GroupName="rbpublic" text="公開問答"/>
+                    <asp:RadioButton ID="rbunpublic" runat="server" GroupName="rbpublic" text="不公開問答" />
+                    &nbsp<label style="color:darkred"> ※如選擇公開回答待管理者回覆後才顯示內容 </label>
+                    <%--<input type="radio" id="rbpublic" name="public" value="0" />
+                    <label>公開問答</label>
+                    <input type="radio" id="rbunpublic" name="public" value="1" checked/>
+                    <label>不公開問答</label><br>--%>
+                </div>
             </div>
             <div class="col-md-12 div-center" style="margin-bottom: 10px;">
                 <div class="col-md-1" style="font-size: 20px; text-align: right">

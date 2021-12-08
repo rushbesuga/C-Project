@@ -28,6 +28,9 @@ public partial class Pages_SendQA : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         rbmale.Checked = true;
+        rbpublic.Attributes.Add("value", "0");
+        rbunpublic.Attributes.Add("value", "1");
+        rbunpublic.Checked = true;
     }
 
 
@@ -56,6 +59,13 @@ public partial class Pages_SendQA : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, this.GetType(), "", "alert(\"請輸入問題 !\");", true);
             return;
         }
+        string sFinalPublicQA = "1";
+        if (rbpublic.Checked == true)
+        {
+            sFinalPublicQA = "0";
+        }
+        else
+            sFinalPublicQA = "1";
         string sValidation = Session["ValidateNum"] as string ?? Guid.NewGuid().ToString();
         if (txtCheck.Text != sValidation)
         {
@@ -65,8 +75,8 @@ public partial class Pages_SendQA : System.Web.UI.Page
         try
         {
             SqlFactory sqlFactory = new SqlFactory();
-            string sSql = @"insert into tbl_qaandmessage_data(row_title,row_name,row_gender,row_phone,row_email,row_content,row_createtime)
-                           values(@title,@name,@gender,@phone,@email,@content, getdate())
+            string sSql = @"insert into tbl_qaandmessage_data(row_title,row_name,row_gender,row_phone,row_email,row_content,row_recovery_public,row_createtime)
+                           values(@title,@name,@gender,@phone,@email,@content,@row_recovery_public, getdate())
             ";
             Dictionary<string, string> param = new Dictionary<string, string>();
             param.Add("title", tbemailtitle.Text);
@@ -78,8 +88,9 @@ public partial class Pages_SendQA : System.Web.UI.Page
             param.Add("phone", tbphone.Text);
             param.Add("email", tbemail.Text);
             param.Add("content", tbcontent.Value);
+            param.Add("row_recovery_public", sFinalPublicQA);
             sqlFactory.ModifyData(sSql, param);
-            Response.Redirect("../pages/QAandMessageBoard.aspx");
+            Response.Redirect("../pages/QAandMessageBoard.aspx",false);
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "", "alert('發問成功');", true);
         }
         catch (Exception ex)
