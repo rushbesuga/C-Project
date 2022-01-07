@@ -165,15 +165,15 @@
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
                         <input type="checkbox" id="cbReserveItemType1" class="cbReserveItemType" value="水土保持申請程序諮詢">
-                        <label for="cbReserveItemType1">水土保持申請程序諮詢</label>
+                        <label for="cbReserveItemType1">水土保持申請程序諮詢</label><br/>
                         <input type="checkbox" id="cbReserveItemType2" class="cbReserveItemType" value="水土保持處理技術輔導">
                         <label for="cbReserveItemType2">水土保持處理技術輔導</label><br />
                         <input type="checkbox" id="cbReserveItemType3" class="cbReserveItemType" value="水土保持設施檢查輔導">
-                        <label for="cbReserveItemType3">水土保持設施檢查輔導</label>
+                        <label for="cbReserveItemType3">水土保持設施檢查輔導</label><br/>
                         <input type="checkbox" id="cbReserveItemType4" class="cbReserveItemType" value="水土保持違規改正輔導">
                         <label for="cbReserveItemType4">水土保持違規改正輔導</label><br />
                         <input type="checkbox" id="cbReserveItemType5" class="cbReserveItemType" value="山坡地災害之搶修輔導">
-                        <label for="cbReserveItemType5">山坡地災害之搶修輔導</label>
+                        <label for="cbReserveItemType5">山坡地災害之搶修輔導</label><br/>
                         <input type="checkbox" id="cbReserveItemType6" class="cbReserveItemType" value="山坡地地質諮詢">
                         <label for="cbReserveItemType6">山坡地地質諮詢</label>
                     </div>

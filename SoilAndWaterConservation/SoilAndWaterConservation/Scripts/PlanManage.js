@@ -35,15 +35,16 @@
     }
     function showQRButton(cellvalue, options, rowObject) {
         return "<button type='button'  onclick='btnQrcodePage(" + rowObject.plan_id + ")'>QRCODE</button>";
-    }
-    if ($('#MainContent_hidlevelcontrol').val() == "0") {
-        $('#btnadd').show();
-    }
-    else if ($('#MainContent_hidlevelcontrol').val() == "1") {
-        $("#grid").jqGrid('setColProp', 'plan_id', { width: 0 });
-        jQuery("#grid").setGridParam().hideCol("plan_id").trigger("reloadGrid");
-        $('#btnadd').hide();
-    }
+    } 
+    $('#btnadd').show();
+    //if ($('#MainContent_hidlevelcontrol').val() == "0") {
+        
+    //}
+    //else if ($('#MainContent_hidlevelcontrol').val() == "1") {
+    //    $("#grid").jqGrid('setColProp', 'plan_id', { width: 0 });
+    //    jQuery("#grid").setGridParam().hideCol("plan_id").trigger("reloadGrid");
+    //    $('#btnadd').hide();
+    //}
 }
 function btnQueryPlanData() {
     var choosePlanStatustItem = '';

@@ -9,7 +9,7 @@
         $('#admin-default-down-right').hide();
     }
     else if ($('#MainContent_hidlevelcontrol').val() == "1") {
-        $('#admin-default-left').hide();
+        $('#admin-default-left').show();
         $('#admin-default-center').hide();
         $('#admin-default-right').hide();
         $('#admin-default-down-left').show();
