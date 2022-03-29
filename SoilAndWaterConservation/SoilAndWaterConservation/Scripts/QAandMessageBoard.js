@@ -201,6 +201,11 @@ function searchmaintenancedata() {
 function saveReplyQA() {
     var data;
     data = new FormData();
+    if ($("input[name='public']:checked").val() == "0")
+        if ($('#tbrecovery_title').val().trim() == "" || $('#tbrecovery_content').val().trim() == "") {
+            alert("請輸入必填項目");
+            return;
+        }
     data.append('id', $('#tbid').val());
     data.append('recoveryname', $('#tbrecovery_name').val());
     data.append('recoverytitle', $('#tbrecovery_title').val());

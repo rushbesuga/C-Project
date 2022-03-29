@@ -113,7 +113,7 @@
                     <div class="col-md-1" style="font-size: 20px; text-align: right">
                     </div>
                     <div class="col-md-4" style="font-size: 20px; text-align: center">
-                        公開問題內容:
+                        公開問題內容(必填):
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
                         <input type="text" id="tbrecovery_title" style="min-width: 100%" />
@@ -123,7 +123,7 @@
                     <div class="col-md-1" style="font-size: 20px; text-align: right">
                     </div>
                     <div class="col-md-4" style="font-size: 20px; text-align: center">
-                        公開問題解答:
+                        公開問題解答(必填):
                     </div>
                     <div class="col-md-7" style="font-size: 20px; text-align: left">
                         <textarea id="tbrecovery_content" style="min-height: 150px; min-width: 100%" >
