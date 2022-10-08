@@ -29,6 +29,7 @@ public class PlanDetailHandler : IHttpHandler, System.Web.SessionState.IReadOnly
         string sAddMonth = (context.Request.Form["add_month"] != null) ? context.Request.Form["add_month"] : context.Request["add_month"];
         string sExpirationDate = (context.Request.Form["expiration_date"] != null) ? context.Request.Form["expiration_date"] : context.Request["expiration_date"];
         string sHowDays = (context.Request.Form["how_days"] != null) ? context.Request.Form["how_days"] : context.Request["how_days"];
+        string sPlanUndertaker = (context.Request.Form["plan_undertaker"] != null) ? context.Request.Form["plan_undertaker"] : context.Request["plan_undertaker"];
 
         string sSql = "";
         SqlFactory sf = new SqlFactory();
@@ -74,12 +75,12 @@ public class PlanDetailHandler : IHttpHandler, System.Web.SessionState.IReadOnly
             case "SavePlan":
                 if (sAction == "add")
                 {
-                    sSql = @"insert into tbl_plan_data_detail (plan_case_no,plan_name,plan_audit_date,plan_status,plan_start_work_extend_date_1st,plan_start_work_extend_date_2nd,plan_start_work_expiration_date,plan_start_work_date,plan_finish_work_extend_date_1st,plan_finish_work_extend_date_2nd,plan_finish_work_expiration_date,plan_finish_work_date,update_time)
-                            values(@sPlanCaseNo,@sPlanName,@sPlanAuditDate,@sPlanStatus,@sPlanStartWorkExtendDate1st,@sPlanStartWorkExtendDate2nd,@sPlanStartWorkExpirationDate,@sPlanStartWorkDate,@sPlanFinishWorkExtendDate1st,@sPlanFinishWorkExtendDate2nd,@sPlanFinishWorkExpirationDate,@sPlanFinishWorkDate,getdate())";
+                    sSql = @"insert into tbl_plan_data_detail (plan_case_no,plan_name,plan_audit_date,plan_status,plan_start_work_extend_date_1st,plan_start_work_extend_date_2nd,plan_start_work_expiration_date,plan_start_work_date,plan_finish_work_extend_date_1st,plan_finish_work_extend_date_2nd,plan_finish_work_expiration_date,plan_finish_work_date,update_time,plan_undertaker)
+                            values(@sPlanCaseNo,@sPlanName,@sPlanAuditDate,@sPlanStatus,@sPlanStartWorkExtendDate1st,@sPlanStartWorkExtendDate2nd,@sPlanStartWorkExpirationDate,@sPlanStartWorkDate,@sPlanFinishWorkExtendDate1st,@sPlanFinishWorkExtendDate2nd,@sPlanFinishWorkExpirationDate,@sPlanFinishWorkDate,getdate(),@sPlanUndertaker)";
                 }
                 else if (sAction == "edit")
                 {
-                    sSql = @"update tbl_plan_data_detail set plan_case_no=@sPlanCaseNo,plan_name=@sPlanName,plan_audit_date=@sPlanAuditDate,plan_status=@sPlanStatus,plan_start_work_extend_date_1st=@sPlanStartWorkExtendDate1st,plan_start_work_extend_date_2nd=@sPlanStartWorkExtendDate2nd,plan_start_work_date=@sPlanStartWorkDate,plan_start_work_expiration_date=@sPlanStartWorkExpirationDate,plan_finish_work_extend_date_1st=@sPlanFinishWorkExtendDate1st,plan_finish_work_extend_date_2nd=@sPlanFinishWorkExtendDate2nd,plan_finish_work_expiration_date=@sPlanFinishWorkExpirationDate,plan_finish_work_date=@sPlanFinishWorkDate,update_time=getdate()
+                    sSql = @"update tbl_plan_data_detail set plan_case_no=@sPlanCaseNo,plan_name=@sPlanName,plan_audit_date=@sPlanAuditDate,plan_status=@sPlanStatus,plan_start_work_extend_date_1st=@sPlanStartWorkExtendDate1st,plan_start_work_extend_date_2nd=@sPlanStartWorkExtendDate2nd,plan_start_work_date=@sPlanStartWorkDate,plan_start_work_expiration_date=@sPlanStartWorkExpirationDate,plan_finish_work_extend_date_1st=@sPlanFinishWorkExtendDate1st,plan_finish_work_extend_date_2nd=@sPlanFinishWorkExtendDate2nd,plan_finish_work_expiration_date=@sPlanFinishWorkExpirationDate,plan_finish_work_date=@sPlanFinishWorkDate,update_time=getdate(),plan_undertaker = @sPlanUndertaker
                             where plan_id = @sPlanID";
                     Dparameter.Add("@sPlanID", sPlanID);
                 }
@@ -95,6 +96,7 @@ public class PlanDetailHandler : IHttpHandler, System.Web.SessionState.IReadOnly
                 Dparameter.Add("@sPlanFinishWorkExtendDate2nd", sPlanFinishWorkExtendDate2nd);
                 Dparameter.Add("@sPlanFinishWorkExpirationDate", sPlanFinishWorkExpirationDate);
                 Dparameter.Add("@sPlanFinishWorkDate", sPlanFinishWorkDate);
+                Dparameter.Add("@sPlanUndertaker", sPlanUndertaker);
                 dt = sf.QueryData(sSql, Dparameter);
                 JSONresult = JsonConvert.SerializeObject(dt);
                 context.Response.Write(JSONresult);

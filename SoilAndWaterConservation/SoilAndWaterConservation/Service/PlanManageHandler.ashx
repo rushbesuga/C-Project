@@ -50,7 +50,9 @@ public class PlanManageHandler : IHttpHandler, System.Web.SessionState.IReadOnly
                 break;
 
             case "GetPlanDetailData":
-                sSql = @"select plan_id,
+                sSql = @"select 
+                            ROW_NUMBER() OVER(ORDER BY plan_id) AS row_id,
+                            plan_id,
                             plan_id as plan_id_qrcode,
                             plan_case_no,
                             plan_name,
@@ -65,6 +67,7 @@ public class PlanManageHandler : IHttpHandler, System.Web.SessionState.IReadOnly
                             else case when isnull(plan_finish_work_extend_date_1st,'') != '' then plan_finish_work_extend_date_1st end end as plan_finish_work_extend_date,
                             plan_finish_work_expiration_date,
                             plan_finish_work_date,
+                            plan_undertaker,
                             update_user,
                             update_time
                             from tbl_plan_data_detail
