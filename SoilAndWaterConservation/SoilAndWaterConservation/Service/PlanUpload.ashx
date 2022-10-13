@@ -108,6 +108,7 @@ public class PlanUpload : IHttpHandler
                                     plan_upload_file_name_2=@plan_upload_file_name_2,plan_upload_file_type_2=@plan_upload_file_type_2,
                                     plan_upload_file_id_3=@plan_upload_file_id_3,plan_upload_file_name_3=@plan_upload_file_name_3,
                                     plan_upload_file_type_3=@plan_upload_file_type_3,plan_upload_time=getdate(),plan_upload_remark=@plan_upload_remark
+                              where plan_upload_id=@plan_upload_id
                               ";
                     Dparameter.Add("@plan_upload_name", sname);
                     Dparameter.Add("@plan_upload_case_no", sid);
@@ -121,6 +122,7 @@ public class PlanUpload : IHttpHandler
                     Dparameter.Add("@plan_upload_file_name_3", sfile3name);
                     Dparameter.Add("@plan_upload_file_type_3", sfile3type);
                     Dparameter.Add("@plan_upload_remark", sremark);
+                    Dparameter.Add("@plan_upload_id", dt.Rows[0]["plan_upload_id"].ToString());
                     sf.ModifyData(sSql, Dparameter);
                 }
                 else

@@ -106,7 +106,7 @@
                                     </a>
                                 </li>
                                 <li id="admin-menu-default-down-right">
-                                    <a runat="server" href="~/Pages/Plan">
+                                    <a runat="server" href="~/Pages/PlanUploadManage">
                                         <i class="fas fa-download"></i>簡易水土保持計畫查詢與下載
                                     </a>
                                 </li>
