@@ -9,6 +9,7 @@
     <script src='/Scripts/Guriddo_jqGrid_JS_5.5.5-Trial/js/jquery.jqGrid.min.js' type="text/javascript"></script>
     <script src='/Scripts/Guriddo_jqGrid_JS_5.5.5-Trial/js/i18n/grid.locale-tw.js' type="text/javascript"></script>
     <script type="text/javascript" src="../Scripts/PlanManage.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             loadjqgrid();
@@ -64,11 +65,11 @@
         <div class="col-md-6 div-left" style="font-size: 20px;">
             <input type="button" style="min-width:100%" value="快查：3日內失效案件" onclick="btnQuickQueryPlanData(3);" />
         </div>
-        <div class="col-md-12 div-right" style="font-size: 20px;">
-            <span><br /></span>
-        </div>
-        <div class="col-md-12 div-left" style="font-size: 20px;">
+        <div class="col-md-6 div-left" style="font-size: 20px;">
             <input type="button" id="btnadd" value="新增" onclick="btnAddPlan();" />
+        </div>
+        <div class="col-md-6 div-right" style="font-size: 20px;">
+            <input type="button" id="btnExport" value="匯出" onclick="exportExcel();" />
         </div>
         <div class="col-md-12 div-center" style="margin-bottom: 10px;">
             <table id="grid"></table>

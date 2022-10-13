@@ -8,6 +8,7 @@
         },
         mtype: 'GET',
         colModel: [
+            { name: 'row_id', label: '序號', align: 'center' },
             { name: 'plan_id', label: '操作', align: 'center', formatter: showFuncButton },
             { name: 'plan_id_qrcode', label: 'QRCODE', align: 'center', formatter: showQRButton },
             { name: 'plan_name', label: '計畫名稱', align: 'left' },
@@ -16,15 +17,16 @@
             { name: 'plan_start_work_extend_date', label: '申請開工展延', align: 'center' },
             { name: 'plan_start_work_expiration_date', label: '開工期限', align: 'center' },
             { name: 'plan_finish_work_extend_date', label: '申請完工展延', align: 'center' },
-            { name: 'plan_finish_work_date', label: '核定完工日期', align: 'center' }
+            { name: 'plan_finish_work_date', label: '核定完工日期', align: 'center' },
+            { name: 'plan_undertaker', label: '承辦人', align: 'center', align: 'center' }
         ],
         pager: '#pager',
         width: '100%',
         height: '100%',
         shrinkToFit: false,
         autowidth: true,
-        rowNum: 10,
-        rowList: [5, 10, 20, 50],
+        rowNum: 30,
+        rowList: [30,50, 100, 200],
         sortname: 'Name',
         sortorder: "asc",
         viewrecords: true,
@@ -75,6 +77,53 @@ function btnQuickQueryPlanData(day) {
         datatype: 'json',
         page: 1
     }).trigger('reloadGrid');
+}
+function exportExcel() {
+    $('#grid').jqGrid('hideCol', ["plan_id", "plan_id_qrcode"]);
+    var dt = new Date();
+    var month = dt.getMonth();
+    if ((month + 1).toString().length < 2)
+        month = '0' + (month + 1).toString();
+    else
+        month = (month + 1).toString();
+    var day = dt.getDate();
+    if (day.toString().length < 2)
+        day = '0' + day.toString();
+    else
+        day = day.toString();
+    var hour = dt.getHours();
+    if (hour.toString().length < 2)
+        hour = '0' + hour.toString();
+    else
+        hour = hour.toString();
+    var minutes = dt.getMinutes();
+    if (minutes.toString().length < 2)
+        minutes = '0' + minutes.toString();
+    else
+        minutes = minutes.toString();
+    var sec = dt.getSeconds();
+    if (sec.toString().length < 2)
+        sec = '0' + sec.toString();
+    else
+        sec = sec.toString();
+    var msec = dt.getMilliseconds();
+    if (msec.toString().length == 2 )
+        sec = '0' + sec.toString();
+    else if (msec.toString().length == 1)
+        sec = '00' + sec.toString();
+    else
+        sec = sec.toString();
+    var fileDate = dt.getFullYear().toString() + month + day + hour + minutes + sec + sec; 
+
+    alert(fileDate)
+    $("#grid").jqGrid("exportToExcel", {
+        includeLabels: true,
+        includeGroupHeader: true,
+        includeFooter: true,
+        fileName: fileDate+"_簡易水土保持計畫清單.xlsx",
+        maxlength: 80 // maxlength for visible string data
+    })
+    $('#grid').jqGrid('showCol', ["plan_id", "plan_id_qrcode"]);
 }
 function btnAddPlan() {
     window.location = "PlanDetail?action=add";
