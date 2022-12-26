@@ -98,8 +98,8 @@ function fileupload(file_id) {
     //## 將檔案append FormData
     var files = $('#file' + file_id)[0].files;
     var size = files[0].size;
-    if (size > 5242880) {
-        alert('檔案超過限制大小5MB')
+    if (size > 10485760) {
+        alert('檔案超過限制大小10MB')
         return;
     }
     if (files.length > 0) {

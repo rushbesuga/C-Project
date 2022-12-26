@@ -114,8 +114,7 @@ function exportExcel() {
     else
         sec = sec.toString();
     var fileDate = dt.getFullYear().toString() + month + day + hour + minutes + sec + sec; 
-
-    alert(fileDate)
+    
     $("#grid").jqGrid("exportToExcel", {
         includeLabels: true,
         includeGroupHeader: true,
