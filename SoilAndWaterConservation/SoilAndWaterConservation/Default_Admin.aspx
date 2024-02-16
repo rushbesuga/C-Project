@@ -43,6 +43,9 @@
                 <image class="IndexImage" src="images/admin-default-down-right.png"></image>
             </a>
         </div>
+        <div class="col-md-4 div-center">
+            <a onclick=""><image class="IndexImage" src="images/exportkmz.png"></image></a>
+        </div>
     </div>
     <div class="row">
         <table class="table">

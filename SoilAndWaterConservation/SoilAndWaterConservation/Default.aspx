@@ -23,5 +23,8 @@
         <div class="col-md-4 div-center">
             <a href="Pages/Reserve"><a href="https://serv.swcb.gov.tw/" target="_blank"><image class="IndexImage" src="images/mountain.png"></image></a>
         </div>
+        <div class="col-md-4 div-center">
+            <a onclick=""><image class="IndexImage" src="images/exportkmz.png"></image></a>
+        </div>
     </div>
 </asp:Content>

@@ -183,6 +183,31 @@ public class ReserveManageHandler : IHttpHandler, System.Web.SessionState.IReadO
                 context.Response.BinaryWrite(stream.ToArray());
                 context.Response.End();
                 break;
+               
+            case "ExportAllReport":
+                sSql = @"select block_id from tbl_block";
+                dt = sf.QueryData(sSql, null);
+                wb = new XLWorkbook();
+                for (int iBlockCount = 1; iBlockCount <= dt.Rows.Count; iBlockCount++)
+                {
+                    sSql = @"select a.reserve_date as 預約日期,a.reserve_time as 預約時段,a.reserve_person_name as 預約人,a.reserve_phone as 電話,b.town_name as 地點,replace(replace(replace(a.reserve_item_type,'|',' '),'  ',''),' ',',') as 諮詢事項類別,a.reserve_content as 說明,reserve_engineer as 諮詢技師,reserve_engineer_response as 諮詢結果紀錄
+                            from tbl_reserve_data a
+                            LEFT JOIN tbl_town b on a.reserve_town_id = b.town_id
+                            ORDER BY a.reserve_date,a.reserve_time,a.reserve_town_id";
+                    Dparameter = new Dictionary<string, string>();
+                    DataTable dt2 = sf.QueryData(sSql,Dparameter);
+                    IXLWorksheet workSheet = wb.Worksheets.Add(dt2,"第"+iBlockCount+"區");
+                    workSheet.Columns().AdjustToContents();
+                }
+                stream = GetStream(wb);
+                sFileName = sWeekStartDate + "-" + sWeekEndDate + "-預約明細表.xlsx";
+                context.Response.Clear();
+                context.Response.Buffer = true;
+                context.Response.AddHeader("content-disposition", "attachment; filename=" + sFileName);
+                context.Response.ContentType = "application/vnd.ms-excel";
+                context.Response.BinaryWrite(stream.ToArray());
+                context.Response.End();
+                break;
         }
     }
     public MemoryStream GetStream(XLWorkbook excelWorkbook)

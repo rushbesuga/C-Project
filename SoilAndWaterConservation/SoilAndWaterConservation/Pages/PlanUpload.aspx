@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-md-3 div-right" style="margin-bottom: 10px;">
                     <input type="button" id="btnuploadfile2" value="上傳檔案" onclick="fileupload('2')">
-                    <input type="button" id="btndeletefile2" value="刪除檔案" onclick="filedelete('3')">
+                    <input type="button" id="btndeletefile2" value="刪除檔案" onclick="filedelete('2')">
                 </div>
             </div>
             <div class="col-md-12 div-right" style="margin-bottom: 10px;">
