@@ -46,7 +46,7 @@ function checkWorkExtend2nd(obj) {
                 $('#tbStartWorkExtendDate2nd').val(today);
                 $('#tbStartWorkExpirationDate').val(ExtendDate);
                 $('#tbStartWorkExtendDate2nd').removeAttr('readonly');
-                $('#tbStartWorkExtendDate2nd').css("background-color", "");;
+                $('#tbStartWorkExtendDate2nd').css("background-color", "");
             }
             else {
                 alert('開工期限超過10天，不可申請延展');
@@ -229,7 +229,8 @@ function SavePlan(action) {
     formData.append('plan_finish_work_extend_date_1st', $("#tbFinishWorkExtendDate1st").val());
     formData.append('plan_finish_work_extend_date_2nd', $("#tbFinishWorkExtendDate2nd").val());
     formData.append('plan_finish_work_expiration_date', $("#tbFinishWorkExpirationDate").val());
-    formData.append('plan_finish_work_date', $("#tbFinishWorkDate").val());
+    formData.append('plan_finish_work_date', $("#tbFinishWorkDate").val()); 
+    formData.append('plan_undertaker', $("#tbPlanUndertaker").val()); 
     $.ajax({
         type: "POST",
         async: false,
@@ -283,6 +284,7 @@ function EditLoadData(plan_id) {
             }
             $("#tbFinishWorkExpirationDate").val(data[0].plan_finish_work_expiration_date);
             $("#tbFinishWorkDate").val(data[0].plan_finish_work_date);
+            $("#tbPlanUndertaker").val(data[0].plan_undertaker);
         },
         error: function (thrownError) {
         }

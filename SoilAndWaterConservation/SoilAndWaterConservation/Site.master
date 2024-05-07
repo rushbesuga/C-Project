@@ -106,7 +106,7 @@
                                     </a>
                                 </li>
                                 <li id="admin-menu-default-down-right">
-                                    <a runat="server" href="~/Pages/Plan">
+                                    <a runat="server" href="~/Pages/PlanUploadManage">
                                         <i class="fas fa-download"></i>簡易水土保持計畫查詢與下載
                                     </a>
                                 </li>
@@ -134,6 +134,7 @@
             <hr />
             <footer class="div-center">
                 <p>&copy; <%: DateTime.Now.Year %> 請使用Chrome瀏覽器以取得最佳瀏覽品質</p>
+                <p>系統操作問題請洽08-7703202 分機7792 莊小姐</p>
             </footer>
         </div>
     </form>

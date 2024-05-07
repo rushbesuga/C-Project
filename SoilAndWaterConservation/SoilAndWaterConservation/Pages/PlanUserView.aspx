@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="查詢計畫進度" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="PlanUserView.aspx.cs" Inherits="Pages_PlanUserView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:HiddenField runat="server" ID="hidlevelcontrol" />
     <script type="text/javascript" src="../Scripts/PlanUserView.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {

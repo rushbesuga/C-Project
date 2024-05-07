@@ -101,6 +101,12 @@
     <div class="col-md-9 div-center" style="font-size: 20px">
         <input type="date" required pattern="\d{4}-\d{2}-\d{2}" id="tbFinishWorkDate" style="min-width: 100%;" onblur="ChangePlanStatus();" />
     </div>
+    <div class="col-md-3 div-right div-card-2" style="font-size: 20px">
+        <span>承辦人：</span>
+    </div>
+    <div class="col-md-9 div-center" style="font-size: 20px">
+        <input type="text" id="tbPlanUndertaker" style="min-width: 100%" />
+    </div>
     <div class="col-md-12 div-center" style="font-size: 20px">
         <BR />
     </div>
